@@ -1,0 +1,27 @@
+{
+    "name": "CVoicu/SimpleStateMachine",
+    "description": "Simple State Machine",
+    "keywords": ["state", "machine", "non persistent"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "SimpleStateMachine",
+            "homepage": "http://bitbucket.org/cosminvoicu/simplestatemachine"
+        }
+    ],
+    "require": {
+        "php": ">=5.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-0": { "CVoicu\\SimpleStateMachine\\": "src/" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
