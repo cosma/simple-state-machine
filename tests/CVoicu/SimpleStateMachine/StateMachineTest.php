@@ -39,7 +39,7 @@ class StateMachineTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('CVoicu\SimpleStateMachine\States\Add5EuroState', $stateMachine->getState()->getName(), 'Transition to Add5EuroToPrice State did not take place');
 
-        $this->assertEquals(23.50, $price->getValue());
+        $this->assertEquals(28.50, $price->getValue());
     }
 
     public function testStateMachine_TransitionToAdd20EuroState()
