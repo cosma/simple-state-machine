@@ -28,7 +28,7 @@ class Add20 extends AbstractState
         $price->setValue($price->getValue() + 20);
     }
 
-    protected function configureTransitions()
+    protected function configureAvailableTransitions()
     {
     }
 } 

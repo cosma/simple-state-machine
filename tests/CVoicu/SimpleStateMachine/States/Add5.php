@@ -28,7 +28,7 @@ class Add5 extends AbstractState
         $price->setValue($price->getValue() + 5);
     }
 
-    protected function configureTransitions()
+    protected function configureAvailableTransitions()
     {
 
     }

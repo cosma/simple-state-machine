@@ -17,19 +17,16 @@ namespace CVoicu\SimpleStateMachine;
 abstract class AbstractState {
 
     /**
-     * @var array Transition
-     */
-    private $transitions = array();
-
-    /**
      * @var InterfaceDataStructure
      */
     private $dataStructure;
 
     /**
-     * @var StateMachine
+     * Available Transitions from this State
+     *
+     * @var array Transition
      */
-    private $stateMachine;
+    private $availableTransitions = array();
 
     /**
      * @param InterfaceDataStructure $dataStructure
@@ -37,23 +34,26 @@ abstract class AbstractState {
     public function __construct(InterfaceDataStructure $dataStructure)
     {
         $this->dataStructure = $dataStructure;
+        $this->configureAvailableTransitions();
     }
 
     /**
-     * State specific process of DataStructure
+     * State specific transformation over DataStructure
      *
      * @return mixed
      */
     abstract protected function processDataStructure();
 
     /**
-     * Configure transitions to another states.
+     * Configure available Transitions to another States.
      *
      * @return mixed
      */
-    abstract protected function configureTransitions();
+    abstract protected function configureAvailableTransitions();
 
     /**
+     * Run this state
+     *
      * @param StateMachine $stateMachine
      */
     public function run(StateMachine $stateMachine)
@@ -74,14 +74,14 @@ abstract class AbstractState {
     }
 
     /**
+     * Get available Transition and iterates through them and forward to a new State is the Condition is true
+     *
      * @param StateMachine $stateMachine
      */
     private function doTransition(StateMachine $stateMachine)
     {
-        $this->configureTransitions();
-
         /** @var Transition $transition */
-        foreach($this->transitions as $transition)
+        foreach($this->availableTransitions as $transition)
         {
             if($transition->getCondition() instanceof AbstractCondition){
                 if($transition->getCondition()->isTrue()){
@@ -96,6 +96,8 @@ abstract class AbstractState {
     }
 
     /**
+     * Return the name of the this State
+     *
      * @return string
      */
     public function getName()
@@ -104,12 +106,14 @@ abstract class AbstractState {
     }
 
     /**
+     * Add Transition to a new State with an optional Condition
+     *
      * @param AbstractState $newState
      * @param AbstractCondition $conditionToNewState
      */
     public function addTransition(AbstractState $newState, AbstractCondition $conditionToNewState = null)
     {
-        $this->transitions[] = new Transition($newState, $conditionToNewState);
+        $this->availableTransitions[] = new Transition($newState, $conditionToNewState);
     }
 
     /**

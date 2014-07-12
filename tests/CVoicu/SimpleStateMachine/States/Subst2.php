@@ -30,7 +30,7 @@ class Subst2 extends AbstractState
         $price->setValue($price->getValue() - 2);
     }
 
-    protected function configureTransitions()
+    protected function configureAvailableTransitions()
     {
         $this->addTransition(
             new Subst40($this->getDataStructure()),

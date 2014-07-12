@@ -13,10 +13,14 @@
 
 namespace CVoicu\SimpleStateMachine;
 
+use Alom\Graphviz\Digraph as AlomDigraph;
 use CVoicu\SimpleStateMachine\States\Subst2;
+use Fhaculty\Graph\Exporter\Image;
+use \Fhaculty\Graph\Graph as FhacultyGraph;
 
 class StateMachineTest extends \PHPUnit_Framework_TestCase
 {
+
     public function testStateMachine_TransitionTo_Add5_State()
     {
         $stateMachine = new StateMachine();
@@ -70,5 +74,45 @@ class StateMachineTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('CVoicu\SimpleStateMachine\States\Subst40', $stateMachine->getState()->getName(), 'Transition to Subst40 State did not take place');
     }
+
+    public function testGraph_ClueGraph()
+    {
+        $graph = new FhacultyGraph();
+
+        // create some cities
+        $Subst2 = $graph->createVertex('Subst2');;
+        $Subst40 = $graph->createVertex('Subst40');
+        $Add5 = $graph->createVertex('Add5');
+        $Add20 = $graph->createVertex('Add20');
+
+        // build some roads
+        $Subst2->createEdgeTo($Subst40)->setLayout(array('label' => 'GreaterThen50'));
+        $Subst2->createEdgeTo($Add5)->setLayout(array('label' => 'GreaterThen20'));
+        $Subst2->createEdgeTo($Add20);
+
+        // create loop
+        $Add20->createEdgeTo($Add20);
+
+        $exporter = new Image();
+        $image = $exporter->getOutput($graph);
+        $file = @fopen('tests/coverage/graphresults.png', 'w+');
+        @fwrite($file, $image);
+
+        // http://www.graphviz.org/doc/info/output.html#d:svg
+        $exporter->setFormat('svg');
+
+        $image = $exporter->getOutput($graph);
+
+        print_r($image);
+
+        $file = @fopen('tests/coverage/graphresults.html', 'w+');
+        @fwrite($file, $image);
+    }
+
+
+
+
+
+
 
 }

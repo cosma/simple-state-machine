@@ -29,7 +29,7 @@ class Subst40 extends AbstractState
         $price->setValue($price->getValue() - 40);
     }
 
-    protected function configureTransitions()
+    protected function configureAvailableTransitions()
     {
     }
 } 

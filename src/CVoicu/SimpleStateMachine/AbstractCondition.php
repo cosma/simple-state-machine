@@ -30,6 +30,8 @@ abstract class AbstractCondition
     }
 
     /**
+     *  Check if this condition is true
+     *
      * @return bool
      */
     abstract public function isTrue();
