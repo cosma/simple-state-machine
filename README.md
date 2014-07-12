@@ -92,15 +92,15 @@ class SomeState extends \CVoicu\SimpleStateMachine\Abstract\State
     */
     protected configureTransitions()
     {
-       $this->addTransition('\YourBundle\StateMachineProcess\States\AnotherState');
+       $this->addTransition(new \YourBundle\StateMachineProcess\States\AnotherState($this->getDataStricture()));
 
        .
        .
        .
 
        $this->addTransition(
-           '\YourBundle\StateMachineProcess\States\LastState',
-           '\YourBundle\StateMachineProcess\Conditions\ConditionToLastState'
+           new \YourBundle\StateMachineProcess\States\LastState($this->getDataStricture()),
+           new \YourBundle\StateMachineProcess\Conditions\ConditionToLastState($this->getDataStricture())
        );
     }
 }
