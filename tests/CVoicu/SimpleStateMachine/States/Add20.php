@@ -11,12 +11,12 @@
  * Time: 02:16
  */
 
-namespace  CVoicu\SimpleStateMachine\States;
+namespace CVoicu\SimpleStateMachine\States;
 
 use CVoicu\SimpleStateMachine\AbstractState;
 use CVoicu\SimpleStateMachine\Price;
 
-class Add5EuroState extends AbstractState
+class Add20 extends AbstractState
 {
     /**
      * @return mixed|void
@@ -25,11 +25,10 @@ class Add5EuroState extends AbstractState
     {
         /** @var Price $price */
         $price = $this->getDataStructure();
-        $price->setValue($price->getValue() + 5);
+        $price->setValue($price->getValue() + 20);
     }
 
     protected function configureTransitions()
     {
-
     }
 } 

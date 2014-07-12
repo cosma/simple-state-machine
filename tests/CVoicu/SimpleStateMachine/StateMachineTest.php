@@ -13,7 +13,7 @@
 
 namespace CVoicu\SimpleStateMachine;
 
-use CVoicu\SimpleStateMachine\States\Subst2EuroState;
+use CVoicu\SimpleStateMachine\States\Subst2;
 
 class StateMachineTest extends \PHPUnit_Framework_TestCase
 {
@@ -28,30 +28,42 @@ class StateMachineTest extends \PHPUnit_Framework_TestCase
     }
 
 
-    public function testStateMachine_TransitionToAdd5EuroToPriceState()
+    public function testStateMachine_TransitionTo_Add5_State()
     {
         $stateMachine = new StateMachine();
 
         $price = new Price(25.50);
-        $startState = new Subst2EuroState($price);
+        $startState = new Subst2($price);
 
         $stateMachine->run($startState);
 
-        $this->assertEquals('CVoicu\SimpleStateMachine\States\Add5EuroState', $stateMachine->getState()->getName(), 'Transition to Add5EuroToPrice State did not take place');
+        $this->assertEquals('CVoicu\SimpleStateMachine\States\Add5', $stateMachine->getState()->getName(), 'Transition to Add5 State did not take place');
 
         $this->assertEquals(28.50, $price->getValue());
     }
 
-    public function testStateMachine_TransitionToAdd20EuroState()
+    public function testStateMachine_TransitionToAdd20_State()
     {
         $stateMachine = new StateMachine();
 
         $price = new Price(5.50);
-        $startState = new Subst2EuroState($price);
+        $startState = new Subst2($price);
 
         $stateMachine->run($startState);
 
-        $this->assertEquals('CVoicu\SimpleStateMachine\States\Add20EuroState', $stateMachine->getState()->getName(), 'Transition to Add5EuroToPrice State did not take place');
+        $this->assertEquals('CVoicu\SimpleStateMachine\States\Add20', $stateMachine->getState()->getName(), 'Transition to Add5EuroToPrice State did not take place');
+    }
+
+    public function testStateMachine_TransitionTo_Subst40_State()
+    {
+        $stateMachine = new StateMachine();
+
+        $price = new Price(55.50);
+        $startState = new Subst2($price);
+
+        $stateMachine->run($startState);
+
+        $this->assertEquals('CVoicu\SimpleStateMachine\States\Subst40', $stateMachine->getState()->getName(), 'Transition to Subst40 State did not take place');
     }
 
 }

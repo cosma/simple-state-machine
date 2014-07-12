@@ -8,23 +8,28 @@
  * file that was distributed with this source code.
  *
  * Date: 12/07/14
- * Time: 12:04
+ * Time: 02:16
  */
 
-namespace CVoicu\SimpleStateMachine\Conditions;
+namespace CVoicu\SimpleStateMachine\States;
 
-use CVoicu\SimpleStateMachine\AbstractCondition;
+use CVoicu\SimpleStateMachine\AbstractState;
+use CVoicu\SimpleStateMachine\Conditions\GreaterThen20;
 use CVoicu\SimpleStateMachine\Price;
 
-class GreaterThen20Condition extends AbstractCondition
+class Subst40 extends AbstractState
 {
     /**
-     * @return bool
+     * @return mixed|void
      */
-    public function isTrue()
+    protected function processDataStructure()
     {
         /** @var Price $price */
         $price = $this->getDataStructure();
-        return $price->getValue() > 20.0;
+        $price->setValue($price->getValue() - 40);
+    }
+
+    protected function configureTransitions()
+    {
     }
 } 
