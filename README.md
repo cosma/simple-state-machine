@@ -1,5 +1,5 @@
-SimpleStateMachine -  A very simple State Machine
-=====================================
+SimpleStateMachine -  A very simple State Machine  [![Build Status](https://drone.io/bitbucket.org/cosminvoicu/simplestatemachine/status.png)](https://drone.io/bitbucket.org/cosminvoicu/simplestatemachine/latest)
+=================================================
 
 A Simple State Machine without persistent states.
 A DataEntry object will just go thru different state without timeouts.
