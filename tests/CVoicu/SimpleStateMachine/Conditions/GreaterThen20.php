@@ -24,7 +24,7 @@ class GreaterThen20 extends AbstractCondition
     public function isTrue()
     {
         /** @var Price $price */
-        $price = $this->getDataStructure();
+        $price = $this->dataStructure;
         return $price->getValue() > 20.0;
     }
 } 

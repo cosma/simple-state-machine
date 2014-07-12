@@ -26,10 +26,6 @@ class StateMachine {
      */
     private $statesHistory;
 
-    public function __construct()
-    {
-    }
-
     /**
      * @param AbstractState $state
      */
@@ -48,15 +44,10 @@ class StateMachine {
 
     /**
      * @param AbstractState $startState
-     * @throws \Exception
      */
     public function run(AbstractState $startState)
     {
-        if($startState instanceof AbstractState){
-            $startState->run($this);
-        }else{
-            throw new \Exception('Please set State Machine\'s starting State!');
-        }
+        $startState->run($this);
     }
 
     /**

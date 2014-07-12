@@ -17,17 +17,6 @@ use CVoicu\SimpleStateMachine\States\Subst2;
 
 class StateMachineTest extends \PHPUnit_Framework_TestCase
 {
-    /**
-     * @expectedException \Exception
-     */
-    public function testStateMachine_StartStateNotSetException()
-    {
-        $stateMachine = new StateMachine();
-        $somethig = '';
-        $stateMachine->run($somethig);
-    }
-
-
     public function testStateMachine_TransitionTo_Add5_State()
     {
         $stateMachine = new StateMachine();
@@ -40,6 +29,22 @@ class StateMachineTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('CVoicu\SimpleStateMachine\States\Add5', $stateMachine->getState()->getName(), 'Transition to Add5 State did not take place');
 
         $this->assertEquals(28.50, $price->getValue());
+
+        $statesNameHistory = array();
+
+        /** @var AbstractState $state */
+        foreach($stateMachine->getStatesHistory() as $state)
+        {
+            $statesNameHistory[] = $state->getName();
+        }
+        $this->assertEquals(
+            array(
+                'CVoicu\SimpleStateMachine\States\Subst2',
+                'CVoicu\SimpleStateMachine\States\Add5'
+            ),
+            $statesNameHistory,
+            'Transitions did not follow the right way'
+        );
     }
 
     public function testStateMachine_TransitionToAdd20_State()

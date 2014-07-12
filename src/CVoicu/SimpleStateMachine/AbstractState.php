@@ -31,6 +31,9 @@ abstract class AbstractState {
      */
     private $stateMachine;
 
+    /**
+     * @param InterfaceDataStructure $dataStructure
+     */
     public function __construct(InterfaceDataStructure $dataStructure)
     {
         $this->dataStructure = $dataStructure;
@@ -103,17 +106,10 @@ abstract class AbstractState {
     /**
      * @param AbstractState $newState
      * @param AbstractCondition $conditionToNewState
-     *
-     * @return $this
      */
     public function addTransition(AbstractState $newState, AbstractCondition $conditionToNewState = null)
     {
-        try{
-            $this->transitions[] = new Transition($newState, $conditionToNewState);
-        } catch(\Exception $e){
-            "Transition could not be defined between: {$this->getName()} and {$conditionToNewState->getName()}" ;
-        }
-        return $this;
+        $this->transitions[] = new Transition($newState, $conditionToNewState);
     }
 
     /**

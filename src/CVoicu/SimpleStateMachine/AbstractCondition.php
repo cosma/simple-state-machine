@@ -19,7 +19,7 @@ abstract class AbstractCondition
     /**
      * @var InterfaceDataStructure
      */
-    private $dataStructure;
+    protected $dataStructure;
 
     /**
      * @param InterfaceDataStructure $dataStructure
@@ -33,12 +33,4 @@ abstract class AbstractCondition
      * @return bool
      */
     abstract public function isTrue();
-
-    /**
-     * @return \CVoicu\SimpleStateMachine\InterfaceDataStructure
-     */
-    public function getDataStructure()
-    {
-        return $this->dataStructure;
-    }
 } 
