@@ -103,7 +103,7 @@ class StateMachineTest extends \PHPUnit_Framework_TestCase
 
         $image = $exporter->getOutput($graph);
 
-        print_r($image);
+        //print_r($image);
 
         $file = @fopen('tests/coverage/graphresults.html', 'w+');
         @fwrite($file, $image);
