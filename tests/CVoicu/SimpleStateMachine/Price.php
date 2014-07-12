@@ -11,13 +11,39 @@
  * Time: 02:18
  */
 
-namespace tests;
+namespace CVoicu\SimpleStateMachine;
 
 
 use CVoicu\SimpleStateMachine\InterfaceDataStructure;
 
-class DataStructure implements InterfaceDataStructure
+class Price implements InterfaceDataStructure
 {
+    /**
+     * @var float
+     */
+    private  $value;
+
+    public function __construct($value)
+    {
+        $this->value = $value;
+    }
+
+    /**
+     * @return float
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * @param float $value
+     */
+    public function setValue($value)
+    {
+        $this->value = $value;
+    }
+
     private $traces = array();
 
     /**

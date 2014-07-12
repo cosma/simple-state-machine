@@ -46,12 +46,17 @@ class StateMachine {
         return $this->state;
     }
 
-    public function run()
+    /**
+     * @param AbstractState $startState
+     * @throws \Exception
+     */
+    public function run(AbstractState $startState)
     {
-        if($this->state instanceof AbstractState){
-            $this->state->run();
+        if($startState instanceof AbstractState){
+            $startState->run($this);
+        }else{
+            throw new \Exception('Please set State Machine\'s starting State!');
         }
-        throw new Exception('Please set State Machine\'s starting State!');
     }
 
     /**

@@ -31,7 +31,7 @@ abstract class AbstractState {
      */
     private $stateMachine;
 
-    public function __constructor(InterfaceDataStructure $dataStructure)
+    public function __construct(InterfaceDataStructure $dataStructure)
     {
         $this->dataStructure = $dataStructure;
     }
@@ -51,35 +51,44 @@ abstract class AbstractState {
     abstract protected function configureTransitions();
 
     /**
-     * void
+     * @param StateMachine $stateMachine
      */
-    public function run()
+    public function run(StateMachine $stateMachine)
     {
+        $this->updateStateMachineToCurrentState($stateMachine);
         $this->processDataStructure();
-        $this->updateStateMachineCurrentState();
-        $this->doTransition();
-    }
-
-    private function updateStateMachineCurrentState()
-    {
+        $this->doTransition($stateMachine);
 
     }
 
     /**
-     *
+     * @param StateMachine $stateMachine
      */
-    private function doTransition()
+    private function updateStateMachineToCurrentState(StateMachine $stateMachine)
     {
+        $stateMachine->setState($this);
+        $stateMachine->addStateToHistory($this);
+    }
+
+    /**
+     * @param StateMachine $stateMachine
+     */
+    private function doTransition(StateMachine $stateMachine)
+    {
+        $this->configureTransitions();
+
         /** @var Transition $transition */
         foreach($this->transitions as $transition)
         {
             if($transition->getCondition() instanceof AbstractCondition){
                 if($transition->getCondition()->isTrue()){
-                    $transition->getState()->run();
+                    $transition->getState()->run($stateMachine);
+                    break;
                 }
                 continue;
             }
-            $transition->getState()->run();
+            $transition->getState()->run($stateMachine);
+            break;
         }
     }
 
@@ -110,7 +119,7 @@ abstract class AbstractState {
     /**
      * @return InterfaceDataStructure
      */
-    protected function getDataStructure()
+    public function getDataStructure()
     {
         return $this->dataStructure;
     }

@@ -32,7 +32,7 @@ class Transition {
      * @param AbstractState $state
      * @param AbstractCondition $condition
      */
-    public function __construct(AbstractState $state, AbstractCondition $condition)
+    public function __construct(AbstractState $state, AbstractCondition $condition = null)
     {
         $this->state     = $state;
         $this->condition = $condition;
