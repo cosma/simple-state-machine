@@ -19,7 +19,7 @@ class StateMachine
     /**
      * @var string
      */
-    private $name;
+    private $label;
 
     /**
      * @var AbstractState
@@ -29,7 +29,7 @@ class StateMachine
     /**
      * @var array AbstractState
      */
-    private $statesHistory;
+    private $statesHistory = array();
 
     /**
      * Represents graphical the State Machine
@@ -44,9 +44,9 @@ class StateMachine
     /**
      * @param string $name
      */
-    public function __construct($name = 'Simple State Machine')
+    public function __construct($label = 'Simple State Machine')
     {
-        $this->name = $name;
+        $this->label = $label;
     }
 
     /**
@@ -54,6 +54,8 @@ class StateMachine
      */
     public function setState(AbstractState $state)
     {
+        $state->setStateMachine($this);
+
         $this->state = $state;
     }
 
@@ -71,7 +73,7 @@ class StateMachine
     public function run()
     {
         if($this->state instanceof AbstractState){
-            $this->state->run($this);
+            $this->state->run();
         }else{
             throw new \Exception('State is not Set!');
         }
@@ -119,5 +121,13 @@ class StateMachine
     public function getGraphic()
     {
         return $this->graphic;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLabel()
+    {
+        return $this->label;
     }
 } 

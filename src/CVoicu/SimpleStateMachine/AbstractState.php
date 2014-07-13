@@ -22,6 +22,13 @@ abstract class AbstractState {
     private $dataStructure;
 
     /**
+     * The State Machine
+     *
+     * @var StateMachine
+     */
+    private $stateMachine = null ;
+
+    /**
      * Available Transitions from this State
      *
      * @var array Transition
@@ -63,11 +70,12 @@ abstract class AbstractState {
      *
      * @param StateMachine $stateMachine
      */
-    public function run(StateMachine $stateMachine)
+    public function run()
     {
-        $this->updateStateMachineToCurrentState($stateMachine);
+        $this->stateMachine->setState($this);
         $this->processDataStructure();
-        $this->doTransition($stateMachine);
+        $this->stateMachine->addStateToHistory($this);
+        $this->doTransition();
 
     }
 
@@ -101,8 +109,7 @@ abstract class AbstractState {
      */
     private function updateStateMachineToCurrentState(StateMachine $stateMachine)
     {
-        $stateMachine->setState($this);
-        $stateMachine->addStateToHistory($this);
+
     }
 
     /**
@@ -110,19 +117,21 @@ abstract class AbstractState {
      *
      * @param StateMachine $stateMachine
      */
-    private function doTransition(StateMachine $stateMachine)
+    private function doTransition()
     {
         /** @var Transition $transition */
         foreach($this->availableTransitions as $transition)
         {
             if($transition->getCondition() instanceof AbstractCondition){
                 if($transition->getCondition()->isTrue()){
-                    $transition->getState()->run($stateMachine);
+                    $transition->getState()->setStateMachine($this->stateMachine);
+                    $transition->getState()->run();
                     break;
                 }
                 continue;
             }
-            $transition->getState()->run($stateMachine);
+            $transition->getState()->setStateMachine($this->stateMachine);
+            $transition->getState()->run();
             break;
         }
     }
@@ -138,14 +147,68 @@ abstract class AbstractState {
     }
 
     /**
+     * @param StateMachine $stateMachine
+     */
+    public function setStateMachine(StateMachine $stateMachine = null)
+    {
+        $this->stateMachine = $stateMachine;
+    }
+
+    /**
+     * @return StateMachine
+     */
+    public function getStateMachine()
+    {
+        return $this->stateMachine;
+    }
+
+//    /**
+//     * Add Transition to a new State with an optional Condition
+//     *
+//     * @param AbstractState $newState
+//     * @param AbstractCondition $conditionToNewState
+//     */
+//    public function addTransition(AbstractState $newState, AbstractCondition $conditionToNewState = null)
+//    {
+//        $this->availableTransitions[] = new Transition($newState, $conditionToNewState);
+//    }
+
+    /**
      * Add Transition to a new State with an optional Condition
      *
-     * @param AbstractState $newState
-     * @param AbstractCondition $conditionToNewState
+     * @param $newStateClassName
+     * @param null $conditionClassName
+     * @throws \Exception
      */
-    public function addTransition(AbstractState $newState, AbstractCondition $conditionToNewState = null)
+    public function addTransition($newStateClassName, $conditionClassName = null)
     {
-        $this->availableTransitions[] = new Transition($newState, $conditionToNewState);
+
+        try{
+            if(!class_exists($newStateClassName)){
+                throw new \Exception();
+            }
+            /** @var AbstractState $newState */
+            $newState = new $newStateClassName($this->getDataStructure());
+            $newState->setStateMachine($this->stateMachine);
+
+            $condition = null;
+            if($conditionClassName){
+                if(!class_exists($conditionClassName)){
+                    throw new \Exception();
+                }
+                /** @var AbstractCondition $condition */
+                $condition = new $conditionClassName($this->getDataStructure());
+            }
+        } catch(\Exception $e){
+            throw new \Exception(
+                "Cannot load Transition from State '{$this->getId()}' ".
+                " --> to State '{$newStateClassName}'".
+                " with Condition '{$conditionClassName}'"
+            );
+        }
+
+
+        $this->availableTransitions[] = new Transition($newState, $condition);
     }
 
     /**

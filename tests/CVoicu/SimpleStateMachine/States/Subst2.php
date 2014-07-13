@@ -40,19 +40,12 @@ class Subst2 extends AbstractState
 
     protected function configureAvailableTransitions()
     {
-        $this->addTransition(
-            new Subst40($this->getDataStructure()),
-            new GreaterThan50(  $this->getDataStructure())
-        );
 
-        $this->addTransition(
-            new Add5($this->getDataStructure()),
-            new GreaterThan20($this->getDataStructure())
-        );
+        $this->addTransition('CVoicu\SimpleStateMachine\States\Subst40', 'CVoicu\SimpleStateMachine\Conditions\GreaterThan50');
 
-        $this->addTransition(
-            new Add20($this->getDataStructure())
-        );
+        $this->addTransition('CVoicu\SimpleStateMachine\States\Add5', 'CVoicu\SimpleStateMachine\Conditions\GreaterThan20');
+
+        $this->addTransition('CVoicu\SimpleStateMachine\States\Add20');
 
     }
 } 
