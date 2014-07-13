@@ -30,6 +30,13 @@ abstract class AbstractCondition
     }
 
     /**
+     * Label of this Condition
+     *
+     * @return string
+     */
+    abstract public function getLabel();
+
+    /**
      *  Check if this condition is true
      *
      * @return bool

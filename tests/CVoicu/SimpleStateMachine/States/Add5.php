@@ -19,6 +19,14 @@ use CVoicu\SimpleStateMachine\Price;
 class Add5 extends AbstractState
 {
     /**
+     * @return string
+     */
+    public function getLabel()
+    {
+        return 'Add5';
+    }
+
+    /**
      * @return mixed|void
      */
     protected function processDataStructure()

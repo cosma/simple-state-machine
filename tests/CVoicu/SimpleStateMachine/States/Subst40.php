@@ -14,11 +14,19 @@
 namespace CVoicu\SimpleStateMachine\States;
 
 use CVoicu\SimpleStateMachine\AbstractState;
-use CVoicu\SimpleStateMachine\Conditions\GreaterThen20;
+use CVoicu\SimpleStateMachine\Conditions\GreaterThan20;
 use CVoicu\SimpleStateMachine\Price;
 
 class Subst40 extends AbstractState
 {
+    /**
+     * @return string
+     */
+    public function getLabel()
+    {
+        return 'Subst40';
+    }
+
     /**
      * @return mixed|void
      */

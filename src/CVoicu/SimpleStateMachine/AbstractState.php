@@ -38,6 +38,13 @@ abstract class AbstractState {
     }
 
     /**
+     * Label of this State
+     *
+     * @return string
+     */
+    abstract public function getLabel();
+
+    /**
      * State specific transformation over DataStructure
      *
      * @return mixed
@@ -61,6 +68,31 @@ abstract class AbstractState {
         $this->updateStateMachineToCurrentState($stateMachine);
         $this->processDataStructure();
         $this->doTransition($stateMachine);
+
+    }
+
+    /**
+     * Draw this state and
+     *
+     * @param StateMachine $stateMachine
+     */
+    public function draw(StateMachine $stateMachine)
+    {
+        $stateMachine->getGraphic()->addState($this->getId(), $this->getLabel());
+
+        /** @var Transition $transition */
+        foreach($this->availableTransitions as $transition)
+        {
+            if($transition->getCondition() instanceof AbstractCondition){
+                if($transition->getCondition()->isTrue()){
+                    $transition->getState()->run($stateMachine);
+                    break;
+                }
+                continue;
+            }
+            $transition->getState()->run($stateMachine);
+            break;
+        }
 
     }
 
@@ -96,11 +128,11 @@ abstract class AbstractState {
     }
 
     /**
-     * Return the name of the this State
+     * Return the Id of this State
      *
      * @return string
      */
-    public function getName()
+    protected function getId()
     {
         return get_class($this);
     }

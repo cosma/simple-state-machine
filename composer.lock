@@ -3,58 +3,8 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "d84cf23a1f8a6b9ff3886fc2a9f97fe3",
+    "hash": "ad9bf672de0a923028249231081d1f22",
     "packages": [
-        {
-            "name": "alom/graphviz",
-            "version": "v1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/alexandresalome/graphviz.git",
-                "reference": "f510f5dad3f69e831c3c00918ae52d2a4680daa8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/alexandresalome/graphviz/zipball/f510f5dad3f69e831c3c00918ae52d2a4680daa8",
-                "reference": "f510f5dad3f69e831c3c00918ae52d2a4680daa8",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Alom": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alexandre Salomé",
-                    "email": "alexandre.salome@gmail.com",
-                    "homepage": "http://alexandre-salome.fr"
-                }
-            ],
-            "description": "Graphviz generation for PHP",
-            "homepage": "http://github.com/alexandresalome/graphviz",
-            "keywords": [
-                "dot",
-                "graphviz"
-            ],
-            "time": "2014-05-21 13:52:13"
-        },
         {
             "name": "clue/graph",
             "version": "v0.7.1",

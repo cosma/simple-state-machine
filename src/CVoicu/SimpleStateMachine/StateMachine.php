@@ -13,8 +13,13 @@
 
 namespace CVoicu\SimpleStateMachine;
 
+class StateMachine
+{
 
-class StateMachine {
+    /**
+     * @var string
+     */
+    private $name;
 
     /**
      * @var AbstractState
@@ -27,9 +32,27 @@ class StateMachine {
     private $statesHistory;
 
     /**
+     * Represents graphical the State Machine
+     * @var Graphic
+     */
+    private $graphic;
+
+    protected $styleAttributes = array(
+
+    );
+
+    /**
+     * @param string $name
+     */
+    public function __construct($name = 'Simple State Machine')
+    {
+        $this->name = $name;
+    }
+
+    /**
      * @param AbstractState $state
      */
-    public function setState($state)
+    public function setState(AbstractState $state)
     {
         $this->state = $state;
     }
@@ -43,11 +66,27 @@ class StateMachine {
     }
 
     /**
-     * @param AbstractState $startState
+     * @throws \Exception
      */
-    public function run(AbstractState $startState)
+    public function run()
     {
-        $startState->run($this);
+        if($this->state instanceof AbstractState){
+            $this->state->run($this);
+        }else{
+            throw new \Exception('State is not Set!');
+        }
+    }
+
+    /**
+     * @throws \Exception
+     */
+    public function draw()
+    {
+        if($this->state instanceof AbstractState){
+            $this->state->draw($this);
+        }else{
+            throw new \Exception('State is not Set!');
+        }
     }
 
     /**
@@ -64,5 +103,21 @@ class StateMachine {
     public function getStatesHistory()
     {
         return $this->statesHistory;
+    }
+
+    /**
+     * @param Graphic  $graphic
+     */
+    public function setGraphic(Graphic $graphic)
+    {
+        $this->graphic = $graphic;
+    }
+
+    /**
+     * @return Graphic
+     */
+    public function getGraphic()
+    {
+        return $this->graphic;
     }
 } 

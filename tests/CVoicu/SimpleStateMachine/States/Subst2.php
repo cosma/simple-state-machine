@@ -14,12 +14,20 @@
 namespace CVoicu\SimpleStateMachine\States;
 
 use CVoicu\SimpleStateMachine\AbstractState;
-use CVoicu\SimpleStateMachine\Conditions\GreaterThen20;
-use CVoicu\SimpleStateMachine\Conditions\GreaterThen50;
+use CVoicu\SimpleStateMachine\Conditions\GreaterThan20;
+use CVoicu\SimpleStateMachine\Conditions\GreaterThan50;
 use CVoicu\SimpleStateMachine\Price;
 
 class Subst2 extends AbstractState
 {
+    /**
+     * @return string
+     */
+    public function getLabel()
+    {
+        return 'Subst2';
+    }
+
     /**
      * @return mixed|void
      */
@@ -34,12 +42,12 @@ class Subst2 extends AbstractState
     {
         $this->addTransition(
             new Subst40($this->getDataStructure()),
-            new GreaterThen50(  $this->getDataStructure())
+            new GreaterThan50(  $this->getDataStructure())
         );
 
         $this->addTransition(
             new Add5($this->getDataStructure()),
-            new GreaterThen20($this->getDataStructure())
+            new GreaterThan20($this->getDataStructure())
         );
 
         $this->addTransition(

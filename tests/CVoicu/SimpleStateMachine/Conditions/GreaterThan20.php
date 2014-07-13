@@ -16,8 +16,16 @@ namespace CVoicu\SimpleStateMachine\Conditions;
 use CVoicu\SimpleStateMachine\AbstractCondition;
 use CVoicu\SimpleStateMachine\Price;
 
-class GreaterThen50 extends AbstractCondition
+class GreaterThan20 extends AbstractCondition
 {
+    /**
+     * @return string
+     */
+    public function getLabel()
+    {
+        return 'GreaterThan20';
+    }
+
     /**
      * @return bool
      */
@@ -25,6 +33,6 @@ class GreaterThen50 extends AbstractCondition
     {
         /** @var Price $price */
         $price = $this->dataStructure;
-        return $price->getValue() > 50.0;
+        return $price->getValue() > 20.0;
     }
 } 
