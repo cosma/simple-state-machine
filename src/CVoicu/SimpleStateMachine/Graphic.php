@@ -43,7 +43,7 @@ class Graphic extends AbstractGraphic
     public function drawLegend($label, $styleAttributes = array())
     {
         $styleAttributes['label'] = $label;
-        return $this->graph->createVertex($label.time())->setLayout($styleAttributes);
+        return $this->graph->createVertex($label)->setLayout($styleAttributes);
     }
 
     /**
@@ -55,7 +55,7 @@ class Graphic extends AbstractGraphic
     public function drawState($state, $label, $styleAttributes = array())
     {
         $styleAttributes['label'] = $label;
-        $vertex = $this->graph->createVertex($state);
+        $vertex = $this->graph->createVertex($state, true);
         $vertex->setLayout($styleAttributes);
 
         return $vertex;

@@ -11,19 +11,19 @@
  * Time: 02:16
  */
 
-namespace  CVoicu\SimpleStateMachine\States;
+namespace CVoicu\SimpleStateMachine\States;
 
 use CVoicu\SimpleStateMachine\AbstractState;
 use CVoicu\SimpleStateMachine\Price;
 
-class Add5 extends AbstractState
+class Add1 extends AbstractState
 {
     /**
      * @return string
      */
     public function getLabel()
     {
-        return 'Add 5';
+        return 'Add 1';
     }
 
     /**
@@ -33,14 +33,10 @@ class Add5 extends AbstractState
     {
         /** @var Price $price */
         $price = $this->getDataStructure();
-        $price->setValue($price->getValue() + 5);
+        $price->setValue($price->getValue() +1);
     }
 
     protected function configureAvailableTransitions()
     {
-        $this->addTransition('CVoicu\SimpleStateMachine\States\Add20', 'CVoicu\SimpleStateMachine\Conditions\LessThan30');
-        $this->addTransition('CVoicu\SimpleStateMachine\States\Add15', 'CVoicu\SimpleStateMachine\Conditions\LessThan50');
-        $this->addTransition('CVoicu\SimpleStateMachine\States\Subst17');
-
     }
 } 

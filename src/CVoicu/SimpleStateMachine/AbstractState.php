@@ -56,7 +56,6 @@ abstract class AbstractState
     public function __construct(InterfaceDataStructure $dataStructure = null)
     {
         $this->dataStructure = $dataStructure;
-        $this->configureAvailableTransitions();
     }
 
     /**
@@ -85,6 +84,8 @@ abstract class AbstractState
      */
     public function run()
     {
+        $this->configureAvailableTransitions();
+
         $this->stateMachine->setState($this);
         $this->processDataStructure();
         $this->stateMachine->addStateToHistory($this);
@@ -96,30 +97,40 @@ abstract class AbstractState
      * Draw this state
      *
      * @param AbstractGraphic $graphic
+     * @param bool $propagation
      * @return mixed
      */
-    public function draw(AbstractGraphic $graphic)
+    public function draw(AbstractGraphic $graphic, $propagation = true)
     {
+        $this->configureAvailableTransitions();
+
         $drawnState = $graphic->drawState($this->getId(), $this->getLabel(), $this->styleAttributes);
 
-        /** @var Transition $transition */
-        foreach($this->availableTransitions as $transition)
-        {
-            $nextState = $transition->getState()->draw($graphic);
+        if($propagation){
+            /** @var Transition $transition */
+            foreach($this->availableTransitions as $transition)
+            {
+                $nextState = $transition->getState();
+                if($this->getId() == $nextState->getId()){
+                    $propagation = false;
+                }
 
-            $label = '';
-            $styleAttributes = $transition->styleAttributes;
-            if($transition->getCondition() instanceof AbstractCondition){
-                $label = $transition->getCondition()->getLabel();
-                $styleAttributes = $transition->getCondition()->getStyleAttributes();
+                $drawnNextState = $nextState->draw($graphic, $propagation);
+
+                $label = '';
+                $styleAttributes = $transition->styleAttributes;
+                if($transition->getCondition() instanceof AbstractCondition){
+                    $label = $transition->getCondition()->getLabel();
+                    $styleAttributes = $transition->getCondition()->getStyleAttributes();
+                }
+
+                $graphic->drawTransition(
+                    $drawnState,
+                    $drawnNextState,
+                    $label,
+                    $styleAttributes
+                );
             }
-
-            $graphic->drawTransition(
-                $drawnState,
-                $nextState,
-                $label,
-                $styleAttributes
-            );
         }
         return $drawnState;
     }

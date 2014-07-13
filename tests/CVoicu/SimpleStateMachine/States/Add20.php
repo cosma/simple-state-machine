@@ -37,5 +37,7 @@ class Add20 extends AbstractState
 
     protected function configureAvailableTransitions()
     {
+        $this->addTransition('CVoicu\SimpleStateMachine\States\Add20', 'CVoicu\SimpleStateMachine\Conditions\LessThan30');
+        $this->addTransition('CVoicu\SimpleStateMachine\States\Subst40');
     }
 } 
