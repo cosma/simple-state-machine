@@ -18,12 +18,13 @@ use CVoicu\SimpleStateMachine\Price;
 
 class GreaterThan50 extends AbstractCondition
 {
+
     /**
      * @return string
      */
     public function getLabel()
     {
-        return "> 50";
+        return "   > 50";
     }
 
     /**

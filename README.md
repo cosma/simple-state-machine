@@ -18,6 +18,7 @@ This is installable via [Composer](https://getcomposer.org/) as [CVoicu/simplesS
   - [Defining States](#defining-states)
   - [Configure Transitions](#configure-transitions)
   - [Define Conditions](#define-conditions)
+  - [DOT Language](#dot-language)
 
 ## Usage ##
 
@@ -128,6 +129,15 @@ class SomeCondition extends \CVoicu\SimpleStateMachine\Abstract\Condition
     ....
 }
 ```
+
+
+### DOT Language ###
+
+To take fully advantage of style attributes you need to know DOT language:
+
+Links:
+Drawing graphs with DOT - http://www.graphviz.org/Documentation/dotguide.pdf
+Node Shapes - http://www.graphviz.org/doc/info/shapes.html
 
 
 ## License ##

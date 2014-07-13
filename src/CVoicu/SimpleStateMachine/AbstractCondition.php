@@ -22,13 +22,20 @@ abstract class AbstractCondition
     protected $dataStructure = null;
 
     /**
+     * DOT language attributes
+     * @see http://www.graphviz.org/Documentation/dotguide.pdf
+     *
      * @var array
      */
     protected $styleAttributes = array(
-        'style' => 'filled',
-        'penwidth' => 1,
+        'color' => '#8E949B',
+        'style' => 'bold',
         'fontcolor' => '#000000',
-        'fontsize' => 10,
+        'fontsize' => 9,
+        'penwidth' => 1,
+        'labeldistance' => 3,
+        'labelangle' => 5,
+        'decorate' => true,
     );
 
     /**

@@ -14,8 +14,8 @@
 namespace CVoicu\SimpleStateMachine;
 
 
-class Transition {
-
+class Transition
+{
     /**
      * Target State
      * @var AbstractState
@@ -27,6 +27,21 @@ class Transition {
      * @var AbstractCondition
      */
     private $condition;
+
+    /**
+     * DOT language attributes
+     * @see http://www.graphviz.org/Documentation/dotguide.pdf
+     *
+     * @var array
+     */
+    public $styleAttributes = array(
+        'color' => '#8E949B',
+        'style' => 'bold',
+        'fontcolor' => '#000000',
+        'fontsize' => 9,
+        'penwidth' => 1,
+
+    );
 
     /**
      * @param AbstractState $state

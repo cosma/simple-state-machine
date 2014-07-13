@@ -19,6 +19,17 @@ use CVoicu\SimpleStateMachine\Price;
 class Subst2 extends AbstractState
 {
     /**
+     * @var array
+     */
+    protected $styleAttributes = array(
+        'fillcolor' => '#A8CE9F',
+        'style' => 'filled',
+        'fontcolor' => '#000000',
+        'fontsize' => 12,
+        'penwidth' => 1,
+    );
+
+    /**
      * @return string
      */
     public function getLabel()

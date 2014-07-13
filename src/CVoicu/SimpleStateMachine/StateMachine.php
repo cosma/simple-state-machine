@@ -15,7 +15,6 @@ namespace CVoicu\SimpleStateMachine;
 
 class StateMachine
 {
-
     /**
      * @var string
      */
@@ -31,12 +30,22 @@ class StateMachine
      */
     private $statesHistory = array();
 
+    /**
+     * DOT language attributes
+     * @see http://www.graphviz.org/Documentation/dotguide.pdf
+     *
+     * @var array
+     */
     protected $styleAttributes = array(
-        'shape' => 'rectangle',
+        'color' => '#8E949B',
+        'shape' => 'polygon',
+        'sides' => 8,
+        'peripheries' => 2,
         'fillcolor' => '#004874',
         'style' => 'filled',
         'penwidth' => 1,
-        'fontcolor' => '#ffffff'
+        'fontcolor' => '#ffffff',
+
     );
 
     /**

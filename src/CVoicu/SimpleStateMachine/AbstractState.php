@@ -14,8 +14,8 @@
 namespace CVoicu\SimpleStateMachine;
 
 
-abstract class AbstractState {
-
+abstract class AbstractState
+{
     /**
      * @var InterfaceDataStructure
      */
@@ -35,10 +35,16 @@ abstract class AbstractState {
      */
     private $availableTransitions = array();
 
+    /**
+     * DOT language attributes
+     * @see http://www.graphviz.org/Documentation/dotguide.pdf
+     *
+     * @var array
+     */
     protected $styleAttributes = array(
-        'fillcolor' => '#B9D1E0',
+        'color' => '#8E949B',
+        'fillcolor' => '#D3E3F5',
         'style' => 'filled',
-        'penwidth' => 1,
         'fontcolor' => '#000000',
         'fontsize' => 12,
         'penwidth' => 1,
@@ -102,7 +108,7 @@ abstract class AbstractState {
             $nextState = $transition->getState()->draw($graphic);
 
             $label = '';
-            $styleAttributes = array();
+            $styleAttributes = $transition->styleAttributes;
             if($transition->getCondition() instanceof AbstractCondition){
                 $label = $transition->getCondition()->getLabel();
                 $styleAttributes = $transition->getCondition()->getStyleAttributes();
@@ -209,21 +215,5 @@ abstract class AbstractState {
     public function getDataStructure()
     {
         return $this->dataStructure;
-    }
-
-    /**
-     * @param array $styleAttributes
-     */
-    public function setStyleAttributes($styleAttributes)
-    {
-        $this->styleAttributes = $styleAttributes;
-    }
-
-    /**
-     * @return array
-     */
-    public function getStyleAttributes()
-    {
-        return $this->styleAttributes;
     }
 } 
