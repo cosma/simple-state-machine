@@ -31,6 +31,9 @@ abstract class AbstractGraphic {
      */
     protected $graph;
 
+    /**
+     * @param string $format
+     */
     public function __construct($format = 'svg')
     {
         $this->format = $format;

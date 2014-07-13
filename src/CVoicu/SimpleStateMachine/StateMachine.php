@@ -38,14 +38,13 @@ class StateMachine
      */
     protected $styleAttributes = array(
         'color' => '#8E949B',
-        'shape' => 'polygon',
-        'sides' => 8,
+        'shape' => 'box',
         'peripheries' => 2,
-        'fillcolor' => '#004874',
+        'fillcolor' => 'pink2',
         'style' => 'filled',
         'penwidth' => 1,
         'fontcolor' => '#ffffff',
-
+        'height' => .0,
     );
 
     /**
