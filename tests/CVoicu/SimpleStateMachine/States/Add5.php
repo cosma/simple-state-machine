@@ -23,7 +23,7 @@ class Add5 extends AbstractState
      */
     public function getLabel()
     {
-        return 'Add5';
+        return 'Add 5';
     }
 
     /**

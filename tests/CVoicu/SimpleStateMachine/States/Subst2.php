@@ -23,7 +23,7 @@ class Subst2 extends AbstractState
      */
     public function getLabel()
     {
-        return 'Subst2';
+        return 'Subst 2';
     }
 
     /**

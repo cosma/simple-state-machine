@@ -32,11 +32,15 @@ class StateMachine
     private $statesHistory = array();
 
     protected $styleAttributes = array(
-
+        'shape' => 'rectangle',
+        'fillcolor' => '#004874',
+        'style' => 'filled',
+        'penwidth' => 1,
+        'fontcolor' => '#ffffff'
     );
 
     /**
-     * @param string $name
+     * @param string $label
      */
     public function __construct($label = 'Simple State Machine')
     {

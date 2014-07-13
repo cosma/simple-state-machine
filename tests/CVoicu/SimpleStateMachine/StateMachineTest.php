@@ -42,7 +42,7 @@ class StateMachineTest extends \PHPUnit_Framework_TestCase
         $stateMachine->setState($startState);
         $stateMachine->run();
 
-        $this->assertEquals('Add5', $stateMachine->getState()->getLabel(), 'Transition to Add5 State did not take place');
+        $this->assertEquals('Add 5', $stateMachine->getState()->getLabel(), 'Transition to Add5 State did not take place');
 
         $this->assertEquals(28.50, $price->getValue());
 
@@ -55,8 +55,8 @@ class StateMachineTest extends \PHPUnit_Framework_TestCase
         }
         $this->assertEquals(
             array(
-                'Subst2',
-                'Add5'
+                'Subst 2',
+                'Add 5'
             ),
             $statesNameHistory,
             'Transitions did not follow the right way'
@@ -75,7 +75,7 @@ class StateMachineTest extends \PHPUnit_Framework_TestCase
         $stateMachine->setState($startState);
         $stateMachine->run();
 
-        $this->assertEquals('Add20', $stateMachine->getState()->getLabel(), 'Transition to Add5EuroToPrice State did not take place');
+        $this->assertEquals('Add 20', $stateMachine->getState()->getLabel(), 'Transition to Add5EuroToPrice State did not take place');
     }
 
     /**
@@ -90,7 +90,7 @@ class StateMachineTest extends \PHPUnit_Framework_TestCase
         $stateMachine->setState($startState);
         $stateMachine->run();
 
-        $this->assertEquals('Subst40', $stateMachine->getState()->getLabel(), 'Transition to Subst40 State did not take place');
+        $this->assertEquals('Subst 40', $stateMachine->getState()->getLabel(), 'Transition to Subst40 State did not take place');
     }
 
     /**

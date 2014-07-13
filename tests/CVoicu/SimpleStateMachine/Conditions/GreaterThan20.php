@@ -23,7 +23,7 @@ class GreaterThan20 extends AbstractCondition
      */
     public function getLabel()
     {
-        return 'GreaterThan20';
+        return "Greater \n Than 20";
     }
 
     /**

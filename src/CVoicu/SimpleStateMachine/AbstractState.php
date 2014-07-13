@@ -35,6 +35,15 @@ abstract class AbstractState {
      */
     private $availableTransitions = array();
 
+    protected $styleAttributes = array(
+        'fillcolor' => '#B9D1E0',
+        'style' => 'filled',
+        'penwidth' => 1,
+        'fontcolor' => '#000000',
+        'fontsize' => 12,
+        'penwidth' => 1,
+    );
+
     /**
      * @param InterfaceDataStructure $dataStructure
      */
@@ -81,10 +90,11 @@ abstract class AbstractState {
      * Draw this state
      *
      * @param AbstractGraphic $graphic
+     * @return mixed
      */
     public function draw(AbstractGraphic $graphic)
     {
-        $drawnState = $graphic->drawState($this->getId(), $this->getLabel());
+        $drawnState = $graphic->drawState($this->getId(), $this->getLabel(), $this->styleAttributes);
 
         /** @var Transition $transition */
         foreach($this->availableTransitions as $transition)
@@ -92,16 +102,17 @@ abstract class AbstractState {
             $nextState = $transition->getState()->draw($graphic);
 
             $label = '';
+            $styleAttributes = array();
             if($transition->getCondition() instanceof AbstractCondition){
                 $label = $transition->getCondition()->getLabel();
+                $styleAttributes = $transition->getCondition()->getStyleAttributes();
             }
-
-            //$drawnToState = $graphic->drawState($this->getId(), $this->getLabel());
 
             $graphic->drawTransition(
                 $drawnState,
                 $nextState,
-                $label
+                $label,
+                $styleAttributes
             );
         }
         return $drawnState;
@@ -198,5 +209,21 @@ abstract class AbstractState {
     public function getDataStructure()
     {
         return $this->dataStructure;
+    }
+
+    /**
+     * @param array $styleAttributes
+     */
+    public function setStyleAttributes($styleAttributes)
+    {
+        $this->styleAttributes = $styleAttributes;
+    }
+
+    /**
+     * @return array
+     */
+    public function getStyleAttributes()
+    {
+        return $this->styleAttributes;
     }
 } 

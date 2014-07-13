@@ -23,7 +23,7 @@ class Add20 extends AbstractState
      */
     public function getLabel()
     {
-        return 'Add20';
+        return 'Add 20';
     }
     /**
      * @return mixed|void

@@ -24,7 +24,7 @@ class Subst40 extends AbstractState
      */
     public function getLabel()
     {
-        return 'Subst40';
+        return 'Subst 40';
     }
 
     /**

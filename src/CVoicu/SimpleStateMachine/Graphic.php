@@ -14,8 +14,10 @@
 namespace CVoicu\SimpleStateMachine;
 
 use Fhaculty\Graph\Edge\Directed;
+use Fhaculty\Graph\Exporter\Dot;
 use Fhaculty\Graph\Exporter\Image;
 use Fhaculty\Graph\Graph;
+use Fhaculty\Graph\Layoutable;
 use Fhaculty\Graph\Vertex;
 
 class Graphic extends AbstractGraphic
@@ -25,17 +27,23 @@ class Graphic extends AbstractGraphic
      */
     protected $graph;
 
-
+    /**
+     * @return mixed|void
+     */
     protected function setGraph()
     {
         $this->graph = new Graph();
     }
 
+    /**
+     * @param $label
+     * @param array $styleAttributes
+     * @return Layoutable|mixed
+     */
     public function drawLegend($label, $styleAttributes = array())
     {
         $styleAttributes['label'] = $label;
         return $this->graph->createVertex($label.time())->setLayout($styleAttributes);
-
     }
 
     /**
@@ -51,7 +59,6 @@ class Graphic extends AbstractGraphic
         $vertex->setLayout($styleAttributes);
 
         return $vertex;
-
     }
 
     /**
@@ -72,12 +79,20 @@ class Graphic extends AbstractGraphic
 
     }
 
-
+    /**
+     * Export to desired format
+     *
+     * @return mixed|string
+     */
     public function export()
     {
-        $exporter = new Image();
-        $exporter->setFormat($this->format);
+        if("dot" == $this->format)
+        {
+            $exporter = new Dot();
+        }else{
+            $exporter = new Image();
+            $exporter->setFormat($this->format);
+        }
         return $exporter->getOutput($this->graph);
-
     }
 } 

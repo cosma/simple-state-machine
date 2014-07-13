@@ -22,6 +22,16 @@ abstract class AbstractCondition
     protected $dataStructure = null;
 
     /**
+     * @var array
+     */
+    protected $styleAttributes = array(
+        'style' => 'filled',
+        'penwidth' => 1,
+        'fontcolor' => '#000000',
+        'fontsize' => 10,
+    );
+
+    /**
      * @param InterfaceDataStructure $dataStructure
      */
     public function __construct(InterfaceDataStructure $dataStructure = null)
@@ -42,4 +52,20 @@ abstract class AbstractCondition
      * @return bool
      */
     abstract public function isTrue();
+
+    /**
+     * @param array $styleAttributes
+     */
+    public function setStyleAttributes($styleAttributes)
+    {
+        $this->styleAttributes = $styleAttributes;
+    }
+
+    /**
+     * @return array
+     */
+    public function getStyleAttributes()
+    {
+        return $this->styleAttributes;
+    }
 } 
