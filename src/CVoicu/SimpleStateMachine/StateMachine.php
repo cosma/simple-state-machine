@@ -31,12 +31,6 @@ class StateMachine
      */
     private $statesHistory = array();
 
-    /**
-     * Represents graphical the State Machine
-     * @var Graphic
-     */
-    private $graphic;
-
     protected $styleAttributes = array(
 
     );
@@ -82,13 +76,17 @@ class StateMachine
     /**
      * @throws \Exception
      */
-    public function draw()
+    public function draw(AbstractGraphic $graphic)
     {
+        $graphic->drawLegend($this->label, $this->styleAttributes);
+
         if($this->state instanceof AbstractState){
-            $this->state->draw($this);
+            $this->state->draw($graphic);
         }else{
             throw new \Exception('State is not Set!');
         }
+
+        return $graphic->export();
     }
 
     /**
@@ -105,29 +103,5 @@ class StateMachine
     public function getStatesHistory()
     {
         return $this->statesHistory;
-    }
-
-    /**
-     * @param Graphic  $graphic
-     */
-    public function setGraphic(Graphic $graphic)
-    {
-        $this->graphic = $graphic;
-    }
-
-    /**
-     * @return Graphic
-     */
-    public function getGraphic()
-    {
-        return $this->graphic;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLabel()
-    {
-        return $this->label;
     }
 } 

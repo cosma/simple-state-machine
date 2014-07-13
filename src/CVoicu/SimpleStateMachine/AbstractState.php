@@ -38,7 +38,7 @@ abstract class AbstractState {
     /**
      * @param InterfaceDataStructure $dataStructure
      */
-    public function __construct(InterfaceDataStructure $dataStructure)
+    public function __construct(InterfaceDataStructure $dataStructure = null)
     {
         $this->dataStructure = $dataStructure;
         $this->configureAvailableTransitions();
@@ -67,8 +67,6 @@ abstract class AbstractState {
 
     /**
      * Run this state
-     *
-     * @param StateMachine $stateMachine
      */
     public function run()
     {
@@ -80,42 +78,37 @@ abstract class AbstractState {
     }
 
     /**
-     * Draw this state and
+     * Draw this state
      *
-     * @param StateMachine $stateMachine
+     * @param AbstractGraphic $graphic
      */
-    public function draw(StateMachine $stateMachine)
+    public function draw(AbstractGraphic $graphic)
     {
-        $stateMachine->getGraphic()->addState($this->getId(), $this->getLabel());
+        $drawnState = $graphic->drawState($this->getId(), $this->getLabel());
 
         /** @var Transition $transition */
         foreach($this->availableTransitions as $transition)
         {
+            $nextState = $transition->getState()->draw($graphic);
+
+            $label = '';
             if($transition->getCondition() instanceof AbstractCondition){
-                if($transition->getCondition()->isTrue()){
-                    $transition->getState()->run($stateMachine);
-                    break;
-                }
-                continue;
+                $label = $transition->getCondition()->getLabel();
             }
-            $transition->getState()->run($stateMachine);
-            break;
+
+            //$drawnToState = $graphic->drawState($this->getId(), $this->getLabel());
+
+            $graphic->drawTransition(
+                $drawnState,
+                $nextState,
+                $label
+            );
         }
-
+        return $drawnState;
     }
 
     /**
-     * @param StateMachine $stateMachine
-     */
-    private function updateStateMachineToCurrentState(StateMachine $stateMachine)
-    {
-
-    }
-
-    /**
-     * Get available Transition and iterates through them and forward to a new State is the Condition is true
-     *
-     * @param StateMachine $stateMachine
+     * Get available Transition , iterates through them and forward to a new State if the Condition is true
      */
     private function doTransition()
     {
@@ -162,17 +155,6 @@ abstract class AbstractState {
         return $this->stateMachine;
     }
 
-//    /**
-//     * Add Transition to a new State with an optional Condition
-//     *
-//     * @param AbstractState $newState
-//     * @param AbstractCondition $conditionToNewState
-//     */
-//    public function addTransition(AbstractState $newState, AbstractCondition $conditionToNewState = null)
-//    {
-//        $this->availableTransitions[] = new Transition($newState, $conditionToNewState);
-//    }
-
     /**
      * Add Transition to a new State with an optional Condition
      *
@@ -203,10 +185,9 @@ abstract class AbstractState {
             throw new \Exception(
                 "Cannot load Transition from State '{$this->getId()}' ".
                 " --> to State '{$newStateClassName}'".
-                " with Condition '{$conditionClassName}'"
+                " with Condition '{$conditionClassName}' : {$e->getMessage()} "
             );
         }
-
 
         $this->availableTransitions[] = new Transition($newState, $condition);
     }

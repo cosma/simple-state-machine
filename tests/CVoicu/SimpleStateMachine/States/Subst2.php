@@ -14,8 +14,6 @@
 namespace CVoicu\SimpleStateMachine\States;
 
 use CVoicu\SimpleStateMachine\AbstractState;
-use CVoicu\SimpleStateMachine\Conditions\GreaterThan20;
-use CVoicu\SimpleStateMachine\Conditions\GreaterThan50;
 use CVoicu\SimpleStateMachine\Price;
 
 class Subst2 extends AbstractState

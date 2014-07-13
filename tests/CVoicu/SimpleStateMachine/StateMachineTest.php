@@ -96,6 +96,24 @@ class StateMachineTest extends \PHPUnit_Framework_TestCase
     /**
      * @see CVoicu\SimpleStateMachine\StateMachine
      */
+    public function testGraph_Graphic()
+    {
+        $graphic = new Graphic('svg');
+
+        $stateMachine = new StateMachine();
+
+        $startState = new Subst2();
+        $stateMachine->setState($startState);
+
+        $graphicStateMachine = $stateMachine->draw($graphic);
+
+        $file = @fopen('tests/coverage/_stateMachine.html', 'w+');
+        @fwrite($file, $graphicStateMachine);
+    }
+
+    /**
+     * @see CVoicu\SimpleStateMachine\StateMachine
+     */
     public function testGraph_ClueGraph()
     {
         $graph = new Graph();

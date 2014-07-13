@@ -19,12 +19,12 @@ abstract class AbstractCondition
     /**
      * @var InterfaceDataStructure
      */
-    protected $dataStructure;
+    protected $dataStructure = null;
 
     /**
      * @param InterfaceDataStructure $dataStructure
      */
-    public function __construct(InterfaceDataStructure $dataStructure)
+    public function __construct(InterfaceDataStructure $dataStructure = null)
     {
         $this->dataStructure = $dataStructure;
     }
