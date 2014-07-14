@@ -1,4 +1,4 @@
-SimpleStateMachine -  A very simple State Machine  [![Build Status](https://drone.io/bitbucket.org/cosminvoicu/simplestatemachine/status.png)](https://drone.io/bitbucket.org/cosminvoicu/simplestatemachine/latest)
+SimpleStateMachine -  A very simple State Machine  [![Build Status](https://drone.io/bitbucket.org/cosma/simplestatemachine/status.png)](https://drone.io/bitbucket.org/cosma/simplestatemachine/latest)
 =================================================
 
 A Simple State Machine without persistent states.
