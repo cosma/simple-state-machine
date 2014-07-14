@@ -68,13 +68,13 @@ abstract class AbstractGraphic {
     /**
      * Draw a Transition
      *
-     * @param $initialState
-     * @param $nextState
+     * @param $fromState
+     * @param $toState
      * @param $label
      * @param array $styleAttributes
      * @return mixed
      */
-    abstract public function drawTransition($initialState, $nextState, $label, $styleAttributes = array());
+    abstract public function drawTransition($fromState, $toState, $label, $styleAttributes = array());
 
     /**
      * Export the Graph drawing

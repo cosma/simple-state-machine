@@ -43,7 +43,7 @@ class Graphic extends AbstractGraphic
     public function drawLegend($label, $styleAttributes = array())
     {
         $styleAttributes['label'] = $label;
-        return $this->graph->createVertex($label)->setLayout($styleAttributes);
+        return $this->graph->createVertex($label, true)->setLayout($styleAttributes);
     }
 
     /**
@@ -62,18 +62,18 @@ class Graphic extends AbstractGraphic
     }
 
     /**
-     * @param $initialState
-     * @param $nextState
+     * @param $fromState
+     * @param $toState
      * @param $label
      * @param array $styleAttributes
      * @return Directed|mixed
      */
-    public function drawTransition($initialState,$nextState, $label, $styleAttributes = array())
+    public function drawTransition($fromState, $toState, $label, $styleAttributes = array())
     {
         $styleAttributes['label'] = $label;
-        /** @var Vertex $initialState */
-        /** @var Vertex $nextState */
-        $edge = $initialState->createEdgeTo($nextState);
+        /** @var Vertex $fromState */
+        /** @var Vertex $toState */
+        $edge = $fromState->createEdgeTo($toState);
         $edge->setLayout($styleAttributes);
         return $edge;
 
