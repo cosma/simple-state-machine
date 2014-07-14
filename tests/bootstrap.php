@@ -27,4 +27,4 @@ if ((!$loader = includeIfExists(__DIR__.'/../vendor/autoload.php')) && (!$loader
     exit(1);
 }
 
-$loader->add('CVoicu\SimpleStateMachine\\', __DIR__);
+$loader->add('cosma\SimpleStateMachine\\', __DIR__);

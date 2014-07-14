@@ -11,20 +11,19 @@
  * Time: 02:16
  */
 
-namespace CVoicu\SimpleStateMachine\States;
+namespace cosma\SimpleStateMachine\States;
 
-use CVoicu\SimpleStateMachine\AbstractState;
-use CVoicu\SimpleStateMachine\Price;
+use cosma\SimpleStateMachine\AbstractState;
+use cosma\SimpleStateMachine\Price;
 
-class Subst17 extends AbstractState
+class Add1 extends AbstractState
 {
-
     /**
      * @return string
      */
     public function getLabel()
     {
-        return 'Subst 17';
+        return 'Add 1';
     }
 
     /**
@@ -34,11 +33,10 @@ class Subst17 extends AbstractState
     {
         /** @var Price $price */
         $price = $this->getDataStructure();
-        $price->setValue($price->getValue() - 17);
+        $price->setValue($price->getValue() +1);
     }
 
     protected function configureAvailableTransitions()
     {
-
     }
 } 

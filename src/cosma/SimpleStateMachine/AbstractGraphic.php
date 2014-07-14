@@ -11,7 +11,7 @@
  * Time: 05:11
  */
 
-namespace CVoicu\SimpleStateMachine;
+namespace cosma\SimpleStateMachine;
 
 
 abstract class AbstractGraphic {

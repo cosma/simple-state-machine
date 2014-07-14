@@ -11,10 +11,10 @@
  * Time: 02:18
  */
 
-namespace CVoicu\SimpleStateMachine;
+namespace cosma\SimpleStateMachine;
 
 
-use CVoicu\SimpleStateMachine\InterfaceDataStructure;
+use cosma\SimpleStateMachine\InterfaceDataStructure;
 
 class Price implements InterfaceDataStructure
 {

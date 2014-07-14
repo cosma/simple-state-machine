@@ -11,7 +11,7 @@
  * Time: 23:33
  */
 
-namespace CVoicu\SimpleStateMachine;
+namespace cosma\SimpleStateMachine;
 
 class StateMachine
 {

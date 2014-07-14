@@ -11,7 +11,7 @@
  * Time: 23:43
  */
 
-namespace CVoicu\SimpleStateMachine;
+namespace cosma\SimpleStateMachine;
 
 interface InterfaceDataStructure {
 

@@ -11,10 +11,10 @@
  * Time: 12:04
  */
 
-namespace CVoicu\SimpleStateMachine\Conditions;
+namespace cosma\SimpleStateMachine\Conditions;
 
-use CVoicu\SimpleStateMachine\AbstractCondition;
-use CVoicu\SimpleStateMachine\Price;
+use cosma\SimpleStateMachine\AbstractCondition;
+use cosma\SimpleStateMachine\Price;
 
 class LessThan10 extends AbstractCondition
 {

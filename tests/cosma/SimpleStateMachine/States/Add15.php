@@ -11,10 +11,10 @@
  * Time: 02:16
  */
 
-namespace CVoicu\SimpleStateMachine\States;
+namespace cosma\SimpleStateMachine\States;
 
-use CVoicu\SimpleStateMachine\AbstractState;
-use CVoicu\SimpleStateMachine\Price;
+use cosma\SimpleStateMachine\AbstractState;
+use cosma\SimpleStateMachine\Price;
 
 class Add15 extends AbstractState
 {

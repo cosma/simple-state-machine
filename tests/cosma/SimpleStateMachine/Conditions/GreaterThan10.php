@@ -11,19 +11,19 @@
  * Time: 12:04
  */
 
-namespace CVoicu\SimpleStateMachine\Conditions;
+namespace cosma\SimpleStateMachine\Conditions;
 
-use CVoicu\SimpleStateMachine\AbstractCondition;
-use CVoicu\SimpleStateMachine\Price;
+use cosma\SimpleStateMachine\AbstractCondition;
+use cosma\SimpleStateMachine\Price;
 
-class GreaterThan20 extends AbstractCondition
+class GreaterThan10 extends AbstractCondition
 {
     /**
      * @return string
      */
     public function getLabel()
     {
-        return "Greater \n Than 20";
+        return "Greater \n Than 10";
     }
 
     /**
@@ -33,6 +33,6 @@ class GreaterThan20 extends AbstractCondition
     {
         /** @var Price $price */
         $price = $this->dataStructure;
-        return $price->getValue() > 20.0;
+        return $price->getValue() > 10.0;
     }
 } 

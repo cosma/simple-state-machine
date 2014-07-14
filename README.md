@@ -9,7 +9,7 @@ The State Machine structure can be visualised in a UML diagram
 
 ## Installation ##
 
-This is installable via [Composer](https://getcomposer.org/) as [CVoicu/simplesStateMachine](https://packagist.org/packages/CVoicu/simplesStateMachine).
+This is installable via [Composer](https://getcomposer.org/) as [cosma/simplesStateMachine](https://packagist.org/packages/cosma/simplesStateMachine).
 
 ## Table of Contents
 
@@ -29,7 +29,7 @@ Examples:
 
 ```php
 
-$stateMachine = \CVoicu\SimpleStateMachine\StateMachine();
+$stateMachine = \cosma\SimpleStateMachine\StateMachine();
 
 $initialDataStructure = new \YourBundle\DataStructure();
 $startState = \YourBundle\StateMachineProcess\States\StartState($dataStucture);
@@ -56,7 +56,7 @@ Example of a state
 ```php
 namespace \YourBundle\StateMachineProcess\States\SomeState;
 
-class SomeState extends \CVoicu\SimpleStateMachine\Abstract\State
+class SomeState extends \cosma\SimpleStateMachine\Abstract\State
 {
     /**
     *   process that modifies the DataStructure in this state
@@ -81,7 +81,7 @@ To link states is very easy
 
 namespace  \YourBundle\StateMachineProcess\States\SomeState;
 
-class SomeState extends \CVoicu\SimpleStateMachine\Abstract\State
+class SomeState extends \cosma\SimpleStateMachine\Abstract\State
 {
     protected process()
     {
@@ -116,7 +116,7 @@ To define a Condition is simple
 
 namespace \YourBundle\StateMachineProcess\Conditions\SomeCondition;
 
-class SomeCondition extends \CVoicu\SimpleStateMachine\Abstract\Condition
+class SomeCondition extends \cosma\SimpleStateMachine\Abstract\Condition
 {
     /**
     *   process that modifies the DataStructure in this state

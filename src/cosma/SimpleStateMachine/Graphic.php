@@ -11,7 +11,7 @@
  * Time: 23:33
  */
 
-namespace CVoicu\SimpleStateMachine;
+namespace cosma\SimpleStateMachine;
 
 use Fhaculty\Graph\Edge\Directed;
 use Fhaculty\Graph\Exporter\Dot;

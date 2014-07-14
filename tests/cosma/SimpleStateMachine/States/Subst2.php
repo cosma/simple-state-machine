@@ -11,10 +11,10 @@
  * Time: 02:16
  */
 
-namespace CVoicu\SimpleStateMachine\States;
+namespace cosma\SimpleStateMachine\States;
 
-use CVoicu\SimpleStateMachine\AbstractState;
-use CVoicu\SimpleStateMachine\Price;
+use cosma\SimpleStateMachine\AbstractState;
+use cosma\SimpleStateMachine\Price;
 
 class Subst2 extends AbstractState
 {
@@ -49,8 +49,8 @@ class Subst2 extends AbstractState
 
     protected function configureAvailableTransitions()
     {
-        $this->addTransition('CVoicu\SimpleStateMachine\States\Subst40', 'CVoicu\SimpleStateMachine\Conditions\GreaterThan50');
-        $this->addTransition('CVoicu\SimpleStateMachine\States\Add5', 'CVoicu\SimpleStateMachine\Conditions\GreaterThan20');
-        $this->addTransition('CVoicu\SimpleStateMachine\States\Add20');
+        $this->addTransition('cosma\SimpleStateMachine\States\Subst40', 'cosma\SimpleStateMachine\Conditions\GreaterThan50');
+        $this->addTransition('cosma\SimpleStateMachine\States\Add5', 'cosma\SimpleStateMachine\Conditions\GreaterThan20');
+        $this->addTransition('cosma\SimpleStateMachine\States\Add20');
     }
 } 

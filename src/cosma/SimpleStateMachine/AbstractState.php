@@ -11,7 +11,7 @@
  * Time: 23:41
  */
 
-namespace CVoicu\SimpleStateMachine;
+namespace cosma\SimpleStateMachine;
 
 
 abstract class AbstractState

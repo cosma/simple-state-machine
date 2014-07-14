@@ -1,5 +1,5 @@
 {
-    "name": "CVoicu/SimpleStateMachine",
+    "name": "cosma/SimpleStateMachine",
     "description": "Simple State Machine",
     "keywords": ["state", "machine", "non persistent"],
     "type": "library",
@@ -7,7 +7,7 @@
     "authors": [
         {
             "name": "SimpleStateMachine",
-            "homepage": "http://bitbucket.org/cosminvoicu/simplestatemachine"
+            "homepage": "http://bitbucket.org/cosma/simplestatemachine"
         }
     ],
     "minimum-stability": "stable",
@@ -19,7 +19,7 @@
         "phpunit/phpunit": "3.7.*"
     },
     "autoload": {
-        "psr-0": { "CVoicu\\SimpleStateMachine\\": "src/" }
+        "psr-0": { "cosma\\SimpleStateMachine\\": "src/" }
     },
     "extra": {
         "branch-alias": {

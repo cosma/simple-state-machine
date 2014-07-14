@@ -11,7 +11,7 @@
  * Time: 23:45
  */
 
-namespace CVoicu\SimpleStateMachine;
+namespace cosma\SimpleStateMachine;
 
 
 class Transition
