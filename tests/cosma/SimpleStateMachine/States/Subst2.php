@@ -49,8 +49,8 @@ class Subst2 extends AbstractState
 
     protected function configureAvailableTransitions()
     {
-        $this->addTransition('cosma\SimpleStateMachine\States\Subst40', 'cosma\SimpleStateMachine\Conditions\GreaterThan50');
         $this->addTransition('cosma\SimpleStateMachine\States\Add5', 'cosma\SimpleStateMachine\Conditions\GreaterThan20');
+        $this->addTransition('cosma\SimpleStateMachine\States\Subst40', 'cosma\SimpleStateMachine\Conditions\GreaterThan50');
         $this->addTransition('cosma\SimpleStateMachine\States\Add20');
     }
 } 
