@@ -227,4 +227,5 @@ abstract class AbstractState
     {
         return $this->dataStructure;
     }
+
 } 
