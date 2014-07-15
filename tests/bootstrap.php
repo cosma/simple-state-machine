@@ -27,4 +27,4 @@ if ((!$loader = includeIfExists(__DIR__.'/../vendor/autoload.php')) && (!$loader
     exit(1);
 }
 
-$loader->add('cosma\SimpleStateMachine\\', __DIR__);
+$loader->add('Cosma\SimpleStateMachine\\', __DIR__);

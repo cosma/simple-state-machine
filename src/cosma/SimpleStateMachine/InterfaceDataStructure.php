@@ -11,7 +11,7 @@
  * Time: 23:43
  */
 
-namespace cosma\SimpleStateMachine;
+namespace Cosma\SimpleStateMachine;
 
 interface InterfaceDataStructure {
 

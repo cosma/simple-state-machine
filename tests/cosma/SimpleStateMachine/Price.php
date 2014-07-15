@@ -11,10 +11,10 @@
  * Time: 02:18
  */
 
-namespace cosma\SimpleStateMachine;
+namespace Cosma\SimpleStateMachine;
 
 
-use cosma\SimpleStateMachine\InterfaceDataStructure;
+use Cosma\SimpleStateMachine\InterfaceDataStructure;
 
 class Price implements InterfaceDataStructure
 {

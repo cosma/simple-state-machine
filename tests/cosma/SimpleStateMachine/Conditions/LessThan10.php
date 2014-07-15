@@ -11,10 +11,10 @@
  * Time: 12:04
  */
 
-namespace cosma\SimpleStateMachine\Conditions;
+namespace Cosma\SimpleStateMachine\Conditions;
 
-use cosma\SimpleStateMachine\AbstractCondition;
-use cosma\SimpleStateMachine\Price;
+use Cosma\SimpleStateMachine\AbstractCondition;
+use Cosma\SimpleStateMachine\Price;
 
 class LessThan10 extends AbstractCondition
 {

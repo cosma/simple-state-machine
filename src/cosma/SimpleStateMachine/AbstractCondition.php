@@ -11,7 +11,7 @@
  * Time: 23:42
  */
 
-namespace cosma\SimpleStateMachine;
+namespace Cosma\SimpleStateMachine;
 
 
 abstract class AbstractCondition

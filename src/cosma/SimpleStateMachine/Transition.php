@@ -11,7 +11,7 @@
  * Time: 23:45
  */
 
-namespace cosma\SimpleStateMachine;
+namespace Cosma\SimpleStateMachine;
 
 
 class Transition

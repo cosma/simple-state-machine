@@ -11,10 +11,10 @@
  * Time: 02:16
  */
 
-namespace cosma\SimpleStateMachine\States;
+namespace Cosma\SimpleStateMachine\States;
 
-use cosma\SimpleStateMachine\AbstractState;
-use cosma\SimpleStateMachine\Price;
+use Cosma\SimpleStateMachine\AbstractState;
+use Cosma\SimpleStateMachine\Price;
 
 class Subst10 extends AbstractState
 {

@@ -11,7 +11,7 @@
  * Time: 23:41
  */
 
-namespace cosma\SimpleStateMachine;
+namespace Cosma\SimpleStateMachine;
 
 
 abstract class AbstractState

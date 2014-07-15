@@ -11,7 +11,7 @@
  * Time: 05:11
  */
 
-namespace cosma\SimpleStateMachine;
+namespace Cosma\SimpleStateMachine;
 
 
 abstract class AbstractGraphic {

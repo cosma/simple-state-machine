@@ -11,7 +11,7 @@
  * Time: 23:33
  */
 
-namespace cosma\SimpleStateMachine;
+namespace Cosma\SimpleStateMachine;
 
 class StateMachine
 {
