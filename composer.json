@@ -1,13 +1,13 @@
 {
-    "name": "cosma/SimpleStateMachine",
+    "name": "cosma/simple-state-machine",
     "description": "Simple State Machine",
-    "keywords": ["state", "machine", "non persistent"],
+    "keywords": ["state machine", "non persistent", "graph generation"],
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "SimpleStateMachine",
-            "homepage": "http://bitbucket.org/cosma/simplestatemachine"
+            "homepage": "http://bitbucket.org/cosma/simple-state-machine"
         }
     ],
     "minimum-stability": "stable",
@@ -19,7 +19,7 @@
         "phpunit/phpunit": "3.7.*"
     },
     "autoload": {
-        "psr-0": { "cosma\\SimpleStateMachine\\": "src/" }
+        "psr-0": { "Cosma\\SimpleStateMachine\\": "src/" }
     },
     "extra": {
         "branch-alias": {
