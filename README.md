@@ -1,4 +1,4 @@
-SimpleStateMachine -  A very simple State Machine  [![Build Status](https://drone.io/bitbucket.org/cosma/simplestatemachine/status.png)](https://drone.io/bitbucket.org/cosma/simplestatemachine/latest)
+SimpleStateMachine -  A very simple State Machine  [![Build Status](https://drone.io/bitbucket.org/cosma/simple-state-machine/status.png)](https://drone.io/bitbucket.org/cosma/simple-state-machine/latest)
 =================================================
 
 A Simple State Machine without persistent states.
@@ -9,7 +9,7 @@ The State Machine structure can be visualised in a UML diagram
 
 ## Installation ##
 
-This is installable via [Composer](https://getcomposer.org/) as [cosma/simplesStateMachine](https://packagist.org/packages/cosma/simplesStateMachine).
+This is installable via [Composer](https://getcomposer.org/) as [cosma/simple-state-machine](https://packagist.org/packages/cosma/simple-state-machine).
 
 ## Table of Contents
 
