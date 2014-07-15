@@ -38,7 +38,7 @@ class Add5 extends AbstractState
 
     protected function configureAvailableTransitions()
     {
-        $this->addTransition('Cosma\SimpleStateMachine\States\Add5', 'Cosma\SimpleStateMachine\Conditions\LessThan30');
+        $this->addTransition('Cosma\SimpleStateMachine\States\Add20', 'Cosma\SimpleStateMachine\Conditions\LessThan30');
         $this->addTransition('Cosma\SimpleStateMachine\States\Add15', 'Cosma\SimpleStateMachine\Conditions\LessThan50');
         $this->addTransition('Cosma\SimpleStateMachine\States\Subst17');
 
