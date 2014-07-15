@@ -307,6 +307,7 @@ class StateMachineTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * print_r("\n{$fromState->getId()}->{$toState->getId()}: {$label}\n\n\n");
      * @see cosma\SimpleStateMachine\StateMachine
      */
     public function testGraph_Graphic()

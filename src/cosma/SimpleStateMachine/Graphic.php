@@ -70,9 +70,7 @@ class Graphic extends AbstractGraphic
      */
     public function drawTransition($fromState, $toState, $label, $styleAttributes = array())
     {
-
         $styleAttributes['label'] = $label;
-        print_r("\n{$fromState->getId()}->{$toState->getId()}: {$label}\n\n\n");
         /** @var Vertex $fromState */
         /** @var Vertex $toState */
         $edge = $fromState->createEdgeTo($toState);
