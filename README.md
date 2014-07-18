@@ -9,23 +9,26 @@ The State Machine structure can be visualised in a UML diagram
 
 ## Installation ##
 
-This is installable via [Composer](https://getcomposer.org/) as [cosma/simple-state-machine](https://packagist.org/packages/Cosma/simple-state-machine).
+This is installable via [Composer](https://getcomposer.org/) as [cosma/simple-state-machine](https://packagist.org/packages/cosma/simple-state-machine).
 
 ## Table of Contents
 
 - [Usage](#usage)
 - [Reference](#reference)
-  - [Defining States](#defining-states)
-  - [Configure Transitions](#configure-transitions)
-  - [Define Conditions](#define-conditions)
-  - [DOT Language](#dot-language)
+    - [Defining States](#defining-states)
+    - [Configure Transitions](#configure-transitions)
+    - [Define Conditions](#define-conditions)
+    - [DOT Language](#dot-language)
 - [Tests](#tests)  
 - [License](#license)  
 
 ## Usage ##
 
+To use the State machine you need to follow the next steps:
 
-To use the State machine
+> 1. Define a the Data Structure you want to modify with the help of State Machine
+> Has to implement \Cosma\SimpleStateMachine\InterfaceDataStructure
+
 
 Examples:
 
@@ -33,8 +36,8 @@ Examples:
 
 $stateMachine = \Cosma\SimpleStateMachine\StateMachine();
 
-$initialDataStructure = new \YourBundle\DataStructure();
-$startState = \YourBundle\StateMachineProcess\States\StartState($dataStucture);
+$data = new \YourBundle\DataStructure();
+$startState = \YourBundle\StateMachineProcess\States\StartState($data);
 
 $stateMachine->setState($startState);
 $stateMachine->run();
