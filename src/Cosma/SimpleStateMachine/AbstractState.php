@@ -94,14 +94,21 @@ abstract class AbstractState
     }
 
     /**
-     * Draw this state
+     * Draw this State
      *
      * @param AbstractGraphic $graphic
      * @param bool $propagation
      * @return mixed
+     * @throws \Exception
      */
     public function draw(AbstractGraphic $graphic, $propagation = true)
     {
+
+        if( 0 == strlen(trim($this->getLabel())))
+        {
+            throw new \Exception("Label cannot be empty!");
+        }
+
         $this->configureAvailableTransitions();
 
         $drawnState = $graphic->addState($this->getId(), $this->getLabel(), $this->styleAttributes);

@@ -36,56 +36,70 @@ class Graphic extends AbstractGraphic
     }
 
     /**
-     * @param $label
-     * @param array $styleAttributes
-     * @return Layoutable|mixed
+     * Draw all Legends
+     *
+     * @return array
      */
-    public function drawLegend($label, $styleAttributes = array())
+    private function drawLegends()
     {
-        $styleAttributes['label'] = $label;
-        return $this->graph->createVertex($label, true)->setLayout($styleAttributes);
+        $legends = array();
+
+        foreach($this->legendsStorage as $id => $legend){
+            $legends[] = $this->graph->createVertex($id, true)->setLayout($legend);
+        }
+        return $legends;
     }
 
     /**
-     * @param $state
-     * @param $label
-     * @param array $styleAttributes
-     * @return Vertex|mixed
+     * Draw all States
+     *
+     * @return array
      */
-    public function addState($state, $label, $styleAttributes = array())
+    public function drawStates()
     {
-        $styleAttributes['label'] = $label;
-        $vertex = $this->graph->createVertex($state, true);
-        $vertex->setLayout($styleAttributes);
+        $states = array();
 
-        return $vertex;
+        foreach($this->statesStorage as $id => $state){
+            $states[] = $this->graph->createVertex($id, true)->setLayout($state);
+        }
+        return $states;
     }
 
     /**
-     * @param $fromState
-     * @param $toState
-     * @param $label
-     * @param array $styleAttributes
-     * @return Directed|mixed
+     * Draw all Transitions
+     *
+     * @return array
      */
-    public function addTransition($fromState, $toState, $label, $styleAttributes = array())
+    public function drawTransitions()
     {
-        $styleAttributes['label'] = $label;
-        /** @var Vertex $fromState */
-        /** @var Vertex $toState */
-        $edge = $fromState->createEdgeTo($toState);
-        $edge->setLayout($styleAttributes);
-        return $edge;
+        $transitions = array();
+
+        foreach($this->transitionsStorage as $transition){
+
+            $fromState = $this->graph->createVertex($transition['fromStateId'], true);
+            $targetState = $this->graph->createVertex($transition['targetStateId'], true);
+            $edge = $fromState->createEdgeTo($targetState)->setLayout($transition['styleAttributes']);
+
+            $transitions[] = $edge;
+        }
+        return $transitions;
 
     }
 
     /**
-     * Export to desired format
+     * Draw to desired format
      *
      * @return mixed|string
      */
-    public function export()
+    public function draw()
     {
+
+
+
+        $this->drawLegends();
+        $this->drawStates();
+        $this->drawTransitions();
+
         if("dot" == $this->format)
         {
             $exporter = new Dot();

@@ -90,15 +90,14 @@ class StateMachine
      */
     public function draw(AbstractGraphic $graphic)
     {
-        $graphic->drawLegend($this->label, $this->styleAttributes);
-
         if($this->state instanceof AbstractState){
+            $graphic->addLegend($this->label, $this->styleAttributes);
             $this->state->draw($graphic);
         }else{
             throw new \Exception('State is not Set!');
         }
 
-        return $graphic->export();
+        return $graphic->draw();
     }
 
     /**
