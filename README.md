@@ -25,13 +25,14 @@ This is installable via [Composer](https://getcomposer.org/) as [cosma/simple-st
 ## Usage ##
 
 To use State Machine is very simple.
-Letus follow the simple example of a simple price calculator state machine.
+
+Let's follow the simple example of a simple price calculator state machine.
 
 ```php
 /**
 *   Simple State Machine
 */
-$stateMachine = \Cosma\SimpleStateMachine\StateMachine('Price Calculator State Machine');
+$priceStateMachine = \Cosma\SimpleStateMachine\StateMachine('Price Calculator State Machine');
 
 
 /**
@@ -49,19 +50,33 @@ $initialPriceState = \YourProject\PriceStateMachine\States\InitialPrice($price);
 /**
 *   Simple State Machine cannot run without setting the start State
 */
-$stateMachine->setState($initialPriceState);
+$priceStateMachine->setState($initialPriceState);
 
 /**
 *   Running the State Machine
 *   During this process the Data object will be modified depending on teh configuration of the Machine
 */
-$stateMachine->run();
+$priceStateMachine->run();
 
 /**
 *   Retrieve the Data object at the end of the process
 */
-$finalPrice = $stateMachine->getState()->getData();
+$finalPrice = $priceStateMachine->getState()->getData();
+
+
+/**
+*   Generate the Diagram of the State Machine.
+*   Choose the format
+*/
+$graphic = new Graphic('svg');
+$diagramSVG = $priceStateMachine->draw($graphic);
+echo $diagramSVG;
+
 ```
+
+
+
+
 
 ### Define Data Structure ###
 In first step you define the Data Structure Object you want to modify with the help of State Machine

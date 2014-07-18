@@ -48,7 +48,7 @@ class GraphicTest extends \PHPUnit_Framework_TestCase
     public function testAddState_EmptyLabelException()
     {
         $graphic = new Graphic();
-        $graphic->addState('stateId', '', array());
+        $graphic->addState('Cosma\SimpleStateMachine\Example\States\EmptyLabelState', '', array());
     }
 
     /**
