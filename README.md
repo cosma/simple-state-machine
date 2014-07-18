@@ -15,6 +15,7 @@ This is installable via [Composer](https://getcomposer.org/) as [cosma/simple-st
 
 - [Usage](#usage)
 - [Reference](#reference)
+    - [Defining Data](#defining-data)
     - [Defining States](#defining-states)
     - [Configure Transitions](#configure-transitions)
     - [Define Conditions](#define-conditions)
@@ -75,11 +76,55 @@ echo $diagramSVG;
 
 ## Reference ##
 
-### Defining States ###
 
-Example of a state
+### Defining Data ###
+
+The Data object can be modify by the State Machines transitions and State.
+Must implement the interface \Cosma\SimpleStateMachine\InterfaceData.
+This is a empty interface but is used to force Type hinting.
 
 ```php
+namespace \YourProject\PriceStateMachine;
+
+class Price extends \Cosma\SimpleStateMachine\InterfaceData
+{
+    /**
+    *   @var float
+    */
+    private $value;
+
+    public function __constructor()
+    {
+        $this->value = $this->getPriceFromDB();
+    }
+
+    /**
+    *   setter getters and other functions
+    */
+    .
+    .
+    .
+
+}
+```
+
+This works fine, but it is not very powerful and is completely static. You
+still have to do most of the work. Let's see how to make this more interesting.
+
+
+
+
+
+
+
+
+
+### Defining States ###
+
+All states must extend the AbstractState class
+
+```php
+
 namespace \YourBundle\StateMachineProcess\States\SomeState;
 
 class SomeState extends \Cosma\SimpleStateMachine\Abstract\State
