@@ -29,18 +29,22 @@ To use State Machine is very simple.
 Let's follow the simple example of a simple price calculator state machine.
 
 ```php
-//   Simple State Machine
+/**
+*   Simple State Machine
+*/
 $priceStateMachine = \Cosma\SimpleStateMachine\StateMachine('Price Calculator State Machine');
 
 
-//   Your Data object which can be modify by the State Machines
-//   Has to implement the interface \Cosma\SimpleStateMachine\InterfaceData
-
+/**
+*   Your Data object which can be modify by the State Machines
+*   Has to implement the interface \Cosma\SimpleStateMachine\InterfaceData
+*/
 $price = new \YourProject\Price();
 
-//  Start State of the State Machine
-//   Has to extends the abstract \Cosma\SimpleStateMachine\AbstractState
-
+/**
+*   Start State of the State Machine
+*   Has to extends the abstract \Cosma\SimpleStateMachine\AbstractState
+*/
 $initialPriceState = \YourProject\PriceStateMachine\States\InitialPrice($price);
 
 /**
