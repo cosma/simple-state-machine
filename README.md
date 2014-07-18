@@ -29,22 +29,18 @@ To use State Machine is very simple.
 Let's follow the simple example of a simple price calculator state machine.
 
 ```php
-/**
-*   Simple State Machine
-*/
+//   Simple State Machine
 $priceStateMachine = \Cosma\SimpleStateMachine\StateMachine('Price Calculator State Machine');
 
 
-/**
-*   Your Data object which can be modify by the State Machines
-*   Has to implement the interface \Cosma\SimpleStateMachine\InterfaceData
-*/
+//   Your Data object which can be modify by the State Machines
+//   Has to implement the interface \Cosma\SimpleStateMachine\InterfaceData
+
 $price = new \YourProject\Price();
 
-/**
-*   Start State of the State Machine
-*   Has to extends the abstract \Cosma\SimpleStateMachine\AbstractState
-*/
+//  Start State of the State Machine
+//   Has to extends the abstract \Cosma\SimpleStateMachine\AbstractState
+
 $initialPriceState = \YourProject\PriceStateMachine\States\InitialPrice($price);
 
 /**
@@ -71,52 +67,7 @@ $finalPrice = $priceStateMachine->getState()->getData();
 $graphic = new Graphic('svg');
 $diagramSVG = $priceStateMachine->draw($graphic);
 echo $diagramSVG;
-
 ```
-
-
-
-
-
-### Define Data Structure ###
-In first step you define the Data Structure Object you want to modify with the help of State Machine
-Has to implement \Cosma\SimpleStateMachine\InterfaceDataStructure
-
-```php
-
-$stateMachine = \Cosma\SimpleStateMachine\StateMachine();
-
-$data = new \YourBundle\DataStructure();
-$startState = \YourBundle\StateMachineProcess\States\StartState($data);
-
-$stateMachine->setState($startState);
-$stateMachine->run();
-
-$finalDataStructure = $stateMachine->getCurrentState()->getDataStructure();
-```
-
-
-Examples:
-
-```php
-
-$stateMachine = \Cosma\SimpleStateMachine\StateMachine();
-
-$data = new \YourBundle\DataStructure();
-$startState = \YourBundle\StateMachineProcess\States\StartState($data);
-
-$stateMachine->setState($startState);
-$stateMachine->run();
-
-$finalDataStructure = $stateMachine->getCurrentState()->getDataStructure();
-```
-
-Note: You can also pass an array of filenames if you have multiple files with
-references spanning more than one.
-
-> **Note**: To load plain PHP files, you can use the `dsaadad`
-> class instead. These PHP files must return an array containing the same
-> structure as the  files have.
 
 ## Reference ##
 
