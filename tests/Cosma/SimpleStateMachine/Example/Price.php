@@ -14,9 +14,9 @@
 namespace Cosma\SimpleStateMachine\Example;
 
 
-use Cosma\SimpleStateMachine\InterfaceDataStructure;
+use Cosma\SimpleStateMachine\InterfaceData;
 
-class Price implements InterfaceDataStructure
+class Price implements InterfaceData
 {
     /**
      * @var float

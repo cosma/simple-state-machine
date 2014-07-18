@@ -17,9 +17,9 @@ namespace Cosma\SimpleStateMachine;
 abstract class AbstractState
 {
     /**
-     * @var InterfaceDataStructure
+     * @var InterfaceData
      */
-    private $dataStructure;
+    private $data;
 
     /**
      * The State Machine
@@ -51,11 +51,11 @@ abstract class AbstractState
     );
 
     /**
-     * @param InterfaceDataStructure $dataStructure
+     * @param InterfaceData $dataStructure
      */
-    public function __construct(InterfaceDataStructure $dataStructure = null)
+    public function __construct(InterfaceData $dataStructure = null)
     {
-        $this->dataStructure = $dataStructure;
+        $this->data = $dataStructure;
     }
 
     /**
@@ -195,7 +195,7 @@ abstract class AbstractState
             throw new \InvalidArgumentException("Class '{$newStateClassName}' cannot be loaded.");
         }
         /** @var AbstractState $newState */
-        $newState = new $newStateClassName($this->getDataStructure());
+        $newState = new $newStateClassName($this->getData());
         $newState->setStateMachine($this->stateMachine);
 
         $condition = null;
@@ -204,17 +204,17 @@ abstract class AbstractState
                 throw new \InvalidArgumentException("Class '{$conditionClassName}' cannot be loaded.");
             }
             /** @var AbstractCondition $condition */
-            $condition = new $conditionClassName($this->getDataStructure());
+            $condition = new $conditionClassName($this->getData());
         }
 
         $this->availableTransitions[] = new Transition($newState, $condition);
     }
 
     /**
-     * @return InterfaceDataStructure
+     * @return InterfaceData
      */
-    public function getDataStructure()
+    public function getData()
     {
-        return $this->dataStructure;
+        return $this->data;
     }
 } 

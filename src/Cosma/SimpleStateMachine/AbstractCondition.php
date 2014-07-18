@@ -17,9 +17,9 @@ namespace Cosma\SimpleStateMachine;
 abstract class AbstractCondition
 {
     /**
-     * @var InterfaceDataStructure
+     * @var InterfaceData
      */
-    protected $dataStructure = null;
+    protected $data = null;
 
     /**
      * DOT language attributes
@@ -39,11 +39,11 @@ abstract class AbstractCondition
     );
 
     /**
-     * @param InterfaceDataStructure $dataStructure
+     * @param InterfaceData $dataStructure
      */
-    public function __construct(InterfaceDataStructure $dataStructure = null)
+    public function __construct(InterfaceData $dataStructure = null)
     {
-        $this->dataStructure = $dataStructure;
+        $this->data = $dataStructure;
     }
 
     /**

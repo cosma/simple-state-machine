@@ -32,7 +32,7 @@ class Subst40 extends AbstractState
     protected function processDataStructure()
     {
         /** @var Price $price */
-        $price = $this->getDataStructure();
+        $price = $this->getData();
         $price->setValue($price->getValue() - 40);
     }
 

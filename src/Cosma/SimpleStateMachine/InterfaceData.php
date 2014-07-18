@@ -14,5 +14,5 @@
 namespace Cosma\SimpleStateMachine;
 
 
-interface InterfaceDataStructure {
+interface InterfaceData {
 } 

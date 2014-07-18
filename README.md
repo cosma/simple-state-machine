@@ -1,8 +1,7 @@
 SimpleStateMachine -  A very simple State Machine  [![Build Status](https://drone.io/bitbucket.org/cosma/simple-state-machine/status.png)](https://drone.io/bitbucket.org/cosma/simple-state-machine/latest)
 =================================================
 
-- A Simple State Machine without persistent states.
-- A Data Structure object will just go immediately from one State to another different State without timeouts.
+- A Simple State Machine without persistence and timeouts.
 - States can be defined to modify the Data Structure object.
 - The State Machine graph can be visualised in a UML diagram generated in different formats.
 
@@ -25,10 +24,61 @@ This is installable via [Composer](https://getcomposer.org/) as [cosma/simple-st
 
 ## Usage ##
 
-To use the State machine you need to follow the next steps:
+To use State Machine is very simple.
+Letus follow the simple example of a simple price calculator state machine.
 
-> 1. Define a the Data Structure you want to modify with the help of State Machine
-> Has to implement \Cosma\SimpleStateMachine\InterfaceDataStructure
+```php
+/**
+*   Simple State Machine
+*/
+$stateMachine = \Cosma\SimpleStateMachine\StateMachine('Price Calculator State Machine');
+
+
+/**
+*   Your Data object which can be modify by the State Machines
+*   Has to implement the interface \Cosma\SimpleStateMachine\InterfaceData
+*/
+$price = new \YourProject\Price();
+
+/**
+*   Start State of the State Machine
+*   Has to extends the abstract \Cosma\SimpleStateMachine\AbstractState
+*/
+$initialPriceState = \YourProject\PriceStateMachine\States\InitialPrice($price);
+
+/**
+*   Simple State Machine cannot run without setting the start State
+*/
+$stateMachine->setState($initialPriceState);
+
+/**
+*   Running the State Machine
+*   During this process the Data object will be modified depending on teh configuration of the Machine
+*/
+$stateMachine->run();
+
+/**
+*   Retrieve the Data object at the end of the process
+*/
+$finalPrice = $stateMachine->getState()->getData();
+```
+
+### Define Data Structure ###
+In first step you define the Data Structure Object you want to modify with the help of State Machine
+Has to implement \Cosma\SimpleStateMachine\InterfaceDataStructure
+
+```php
+
+$stateMachine = \Cosma\SimpleStateMachine\StateMachine();
+
+$data = new \YourBundle\DataStructure();
+$startState = \YourBundle\StateMachineProcess\States\StartState($data);
+
+$stateMachine->setState($startState);
+$stateMachine->run();
+
+$finalDataStructure = $stateMachine->getCurrentState()->getDataStructure();
+```
 
 
 Examples:

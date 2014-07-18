@@ -58,7 +58,7 @@ class StateMachineTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('Subst 40', $stateMachine->getState()->getLabel(), 'Transition to Subst 40 State did not take place');
 
-        $this->assertEquals(8.50, $price->getValue());
+        $this->assertEquals(8.50, $stateMachine->getState()->getData()->getValue());
 
         $statesNameHistory = array();
 
