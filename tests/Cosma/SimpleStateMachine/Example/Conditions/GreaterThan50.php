@@ -11,19 +11,20 @@
  * Time: 12:04
  */
 
-namespace Cosma\SimpleStateMachine\Conditions;
+namespace Cosma\SimpleStateMachine\Example\Conditions;
 
 use Cosma\SimpleStateMachine\AbstractCondition;
 use Cosma\SimpleStateMachine\Price;
 
-class LessThan50 extends AbstractCondition
+class GreaterThan50 extends AbstractCondition
 {
+
     /**
      * @return string
      */
     public function getLabel()
     {
-        return "Less \n Than 50";
+        return " > 50";
     }
 
     /**
@@ -33,6 +34,6 @@ class LessThan50 extends AbstractCondition
     {
         /** @var Price $price */
         $price = $this->dataStructure;
-        return $price->getValue() < 50.0;
+        return $price->getValue() > 50.0;
     }
 } 

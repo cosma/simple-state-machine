@@ -7,22 +7,24 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * Date: 18/07/14
- * Time: 22:35
+ * Date: 12/07/14
+ * Time: 02:16
  */
 
-namespace Cosma\SimpleStateMachine\States;
+namespace Cosma\SimpleStateMachine\Example\States;
 
 use Cosma\SimpleStateMachine\AbstractState;
+use Cosma\SimpleStateMachine\Example\Price;
 
-class EmptyLabelState extends AbstractState
+class Subst10 extends AbstractState
 {
+
     /**
      * @return string
      */
     public function getLabel()
     {
-        return '';
+        return 'Subst 10';
     }
 
     /**
@@ -30,12 +32,11 @@ class EmptyLabelState extends AbstractState
      */
     protected function processDataStructure()
     {
+        /** @var Price $price */
+        $price = $this->getDataStructure();
+        $price->setValue($price->getValue() - 10);
     }
 
-    /**
-     * @return mixed|void
-     */
     protected function configureAvailableTransitions()
-    {
-    }
+    {}
 } 

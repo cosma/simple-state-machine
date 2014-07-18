@@ -11,7 +11,7 @@
  * Time: 12:04
  */
 
-namespace Cosma\SimpleStateMachine\Conditions;
+namespace Cosma\SimpleStateMachine\Example\Conditions;
 
 use Cosma\SimpleStateMachine\AbstractCondition;
 use Cosma\SimpleStateMachine\Price;

@@ -11,9 +11,13 @@
  * Time: 01:52
  */
 
-namespace Cosma\SimpleStateMachine;
+namespace Cosma\SimpleStateMachine\Test;
 
-use Cosma\SimpleStateMachine\States\Subst2;
+use Cosma\SimpleStateMachine\StateMachine;
+use Cosma\SimpleStateMachine\Graphic;
+use Cosma\SimpleStateMachine\Example\Price;
+use Cosma\SimpleStateMachine\AbstractState;
+use Cosma\SimpleStateMachine\Example\States\Subst2;
 
 class StateMachineTest extends \PHPUnit_Framework_TestCase
 {
@@ -155,7 +159,7 @@ class StateMachineTest extends \PHPUnit_Framework_TestCase
             $this->markTestSkipped("dot command from graphviz is not installed. Please try 'sudo apt-get install graphviz'");
         }
 
-        $stateMachine = new StateMachine();
+        $stateMachine = new StateMachine('Simple State Machine Example');
 
         $startState = new Subst2();
         $stateMachine->setState($startState);
@@ -163,12 +167,12 @@ class StateMachineTest extends \PHPUnit_Framework_TestCase
         $SVGExport = $stateMachine->draw($graphic);
 
         $this->assertContains('<svg', $SVGExport, 'SVG export is wrong');
-        $this->assertContains('<title>Simple State Machine</title>', $SVGExport, 'SVG export is wrong');
-        $this->assertContains('<title>Cosma\\\SimpleStateMachine\\\States\\\Subst2</title>', $SVGExport, 'SVG export is wrong');
-        $this->assertContains('<title>Cosma\\\SimpleStateMachine\\\States\\\Subst40</title>', $SVGExport, 'SVG export is wrong');
-        $this->assertContains('<title>Cosma\\\SimpleStateMachine\\\States\\\Subst2&#45;&gt;Cosma\\\SimpleStateMachine\\\States\\\Subst40</title>', $SVGExport, 'SVG export is wrong');
-        $this->assertContains('<title>Cosma\\\SimpleStateMachine\\\States\\\Add5</title>', $SVGExport, 'SVG export is wrong');
-        $this->assertContains('<title>Cosma\\\SimpleStateMachine\\\States\\\Subst2&#45;&gt;Cosma\\\SimpleStateMachine\\\States\\\Add5</title>', $SVGExport, 'SVG export is wrong');
+        $this->assertContains('<title>Simple State Machine Example</title>', $SVGExport, 'SVG export is wrong');
+        $this->assertContains('<title>Cosma\\\SimpleStateMachine\\\Example\\\States\\\Subst2</title>', $SVGExport, 'SVG export is wrong');
+        $this->assertContains('<title>Cosma\\\SimpleStateMachine\\\Example\\\States\\\Subst40</title>', $SVGExport, 'SVG export is wrong');
+        $this->assertContains('<title>Cosma\\\SimpleStateMachine\\\Example\\\States\\\Subst2&#45;&gt;Cosma\\\SimpleStateMachine\\\Example\\\States\\\Subst40</title>', $SVGExport, 'SVG export is wrong');
+        $this->assertContains('<title>Cosma\\\SimpleStateMachine\\\Example\\\States\\\Add5</title>', $SVGExport, 'SVG export is wrong');
+        $this->assertContains('<title>Cosma\\\SimpleStateMachine\\\Example\\\States\\\Subst2&#45;&gt;Cosma\\\SimpleStateMachine\\\Example\\\States\\\Add5</title>', $SVGExport, 'SVG export is wrong');
         $this->assertContains('</svg>', $SVGExport, 'SVG export is wrong');
     }
 
@@ -184,7 +188,7 @@ class StateMachineTest extends \PHPUnit_Framework_TestCase
             $this->markTestSkipped("dot command from graphviz is not installed. Please try 'sudo apt-get install graphviz'");
         }
 
-        $stateMachine = new StateMachine();
+        $stateMachine = new StateMachine('Simple State Machine Example');
 
         $startState = new Subst2();
         $stateMachine->setState($startState);
@@ -192,21 +196,21 @@ class StateMachineTest extends \PHPUnit_Framework_TestCase
         $DOTExport = $stateMachine->draw($graphic);
 
         $expectedDOT = "digraph G {
-  \"Simple State Machine\" [color=\"#8E949B\" shape=\"box\" peripheries=2 fillcolor=\"pink2\" style=\"filled\" penwidth=1 fontcolor=\"#ffffff\" height=0 label=\"Simple State Machine\"]
-  \"Cosma\\\SimpleStateMachine\\\States\\\Subst2\" [fillcolor=\"#A8CE9F\" style=\"filled\" fontcolor=\"#000000\" fontsize=12 penwidth=1 label=\"Subst 2\"]
-  \"Cosma\\\SimpleStateMachine\\\States\\\Subst40\" [color=\"#8E949B\" fillcolor=\"#D3E3F5\" style=\"filled\" fontcolor=\"#000000\" fontsize=12 penwidth=1 label=\"Subst 40\"]
-  \"Cosma\\\SimpleStateMachine\\\States\\\Add5\" [color=\"#8E949B\" fillcolor=\"#D3E3F5\" style=\"filled\" fontcolor=\"#000000\" fontsize=12 penwidth=1 label=\"Add 5\"]
-  \"Cosma\\\SimpleStateMachine\\\States\\\Add20\" [color=\"#8E949B\" fillcolor=\"#D3E3F5\" style=\"filled\" fontcolor=\"#000000\" fontsize=12 penwidth=1 label=\"Add 20\"]
-  \"Cosma\\\SimpleStateMachine\\\States\\\Add15\" [color=\"#8E949B\" fillcolor=\"#D3E3F5\" style=\"filled\" fontcolor=\"#000000\" fontsize=12 penwidth=1 label=\"Add 15\"]
-  \"Cosma\\\SimpleStateMachine\\\States\\\Subst17\" [color=\"#8E949B\" fillcolor=\"#D3E3F5\" style=\"filled\" fontcolor=\"#000000\" fontsize=12 penwidth=1 label=\"Subst 17\"]
-  \"Cosma\\\SimpleStateMachine\\\States\\\Subst2\" -> \"Cosma\\\SimpleStateMachine\\\States\\\Subst40\" [color=\"#8E949B\" style=\"bold\" fontcolor=\"#000000\" fontsize=9 penwidth=1 labeldistance=3 labelangle=5 decorate=1 label=\" &gt; 50\"]
-  \"Cosma\\\SimpleStateMachine\\\States\\\Add20\" -> \"Cosma\\\SimpleStateMachine\\\States\\\Add20\" [color=\"#8E949B\" style=\"bold\" fontcolor=\"#000000\" fontsize=9 penwidth=1 labeldistance=3 labelangle=5 decorate=1 label=\"Less \l Than 30\" dir=\"none\"]
-  \"Cosma\\\SimpleStateMachine\\\States\\\Add20\" -> \"Cosma\\\SimpleStateMachine\\\States\\\Subst40\" [color=\"#8E949B\" style=\"bold\" fontcolor=\"#000000\" fontsize=9 penwidth=1 label=\"\"]
-  \"Cosma\\\SimpleStateMachine\\\States\\\Add5\" -> \"Cosma\\\SimpleStateMachine\\\States\\\Add20\" [color=\"#8E949B\" style=\"bold\" fontcolor=\"#000000\" fontsize=9 penwidth=1 labeldistance=3 labelangle=5 decorate=1 label=\"Less \l Than 30\"]
-  \"Cosma\\\SimpleStateMachine\\\States\\\Add5\" -> \"Cosma\\\SimpleStateMachine\\\States\\\Add15\" [color=\"#8E949B\" style=\"bold\" fontcolor=\"#000000\" fontsize=9 penwidth=1 labeldistance=3 labelangle=5 decorate=1 label=\"Less \l Than 50\"]
-  \"Cosma\\\SimpleStateMachine\\\States\\\Add5\" -> \"Cosma\\\SimpleStateMachine\\\States\\\Subst17\" [color=\"#8E949B\" style=\"bold\" fontcolor=\"#000000\" fontsize=9 penwidth=1 label=\"\"]
-  \"Cosma\\\SimpleStateMachine\\\States\\\Subst2\" -> \"Cosma\\\SimpleStateMachine\\\States\\\Add5\" [color=\"#8E949B\" style=\"bold\" fontcolor=\"#000000\" fontsize=9 penwidth=1 labeldistance=3 labelangle=5 decorate=1 label=\"Greater \l Than 20\"]
-  \"Cosma\\\SimpleStateMachine\\\States\\\Subst2\" -> \"Cosma\\\SimpleStateMachine\\\States\\\Add20\" [color=\"#8E949B\" style=\"bold\" fontcolor=\"#000000\" fontsize=9 penwidth=1 label=\"\"]
+  \"Simple State Machine Example\" [color=\"#8E949B\" shape=\"box\" peripheries=2 fillcolor=\"pink2\" style=\"filled\" penwidth=1 fontcolor=\"#ffffff\" height=0 label=\"Simple State Machine Example\"]
+  \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Subst2\" [fillcolor=\"#A8CE9F\" style=\"filled\" fontcolor=\"#000000\" fontsize=12 penwidth=1 label=\"Subst 2\"]
+  \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Subst40\" [color=\"#8E949B\" fillcolor=\"#D3E3F5\" style=\"filled\" fontcolor=\"#000000\" fontsize=12 penwidth=1 label=\"Subst 40\"]
+  \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Add5\" [color=\"#8E949B\" fillcolor=\"#D3E3F5\" style=\"filled\" fontcolor=\"#000000\" fontsize=12 penwidth=1 label=\"Add 5\"]
+  \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Add20\" [color=\"#8E949B\" fillcolor=\"#D3E3F5\" style=\"filled\" fontcolor=\"#000000\" fontsize=12 penwidth=1 label=\"Add 20\"]
+  \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Add15\" [color=\"#8E949B\" fillcolor=\"#D3E3F5\" style=\"filled\" fontcolor=\"#000000\" fontsize=12 penwidth=1 label=\"Add 15\"]
+  \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Subst17\" [color=\"#8E949B\" fillcolor=\"#D3E3F5\" style=\"filled\" fontcolor=\"#000000\" fontsize=12 penwidth=1 label=\"Subst 17\"]
+  \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Subst2\" -> \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Subst40\" [color=\"#8E949B\" style=\"bold\" fontcolor=\"#000000\" fontsize=9 penwidth=1 labeldistance=3 labelangle=5 decorate=1 label=\" &gt; 50\"]
+  \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Add20\" -> \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Add20\" [color=\"#8E949B\" style=\"bold\" fontcolor=\"#000000\" fontsize=9 penwidth=1 labeldistance=3 labelangle=5 decorate=1 label=\"Less \l Than 30\" dir=\"none\"]
+  \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Add20\" -> \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Subst40\" [color=\"#8E949B\" style=\"bold\" fontcolor=\"#000000\" fontsize=9 penwidth=1 label=\"\"]
+  \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Add5\" -> \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Add20\" [color=\"#8E949B\" style=\"bold\" fontcolor=\"#000000\" fontsize=9 penwidth=1 labeldistance=3 labelangle=5 decorate=1 label=\"Less \l Than 30\"]
+  \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Add5\" -> \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Add15\" [color=\"#8E949B\" style=\"bold\" fontcolor=\"#000000\" fontsize=9 penwidth=1 labeldistance=3 labelangle=5 decorate=1 label=\"Less \l Than 50\"]
+  \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Add5\" -> \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Subst17\" [color=\"#8E949B\" style=\"bold\" fontcolor=\"#000000\" fontsize=9 penwidth=1 label=\"\"]
+  \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Subst2\" -> \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Add5\" [color=\"#8E949B\" style=\"bold\" fontcolor=\"#000000\" fontsize=9 penwidth=1 labeldistance=3 labelangle=5 decorate=1 label=\"Greater \l Than 20\"]
+  \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Subst2\" -> \"Cosma\\\SimpleStateMachine\\\Example\\\States\\\Add20\" [color=\"#8E949B\" style=\"bold\" fontcolor=\"#000000\" fontsize=9 penwidth=1 label=\"\"]
 }
 ";
 
@@ -228,7 +232,7 @@ class StateMachineTest extends \PHPUnit_Framework_TestCase
             $this->markTestSkipped("dot command from graphviz is not installed. Please try 'sudo apt-get install graphviz'");
         }
 
-        $stateMachine = new StateMachine();
+        $stateMachine = new StateMachine('Simple State Machine Example');
 
         $startState = new Subst2();
         $stateMachine->setState($startState);

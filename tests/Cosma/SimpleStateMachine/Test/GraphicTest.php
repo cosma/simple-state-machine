@@ -11,10 +11,10 @@
  * Time: 01:52
  */
 
-namespace Cosma\SimpleStateMachine;
+namespace Cosma\SimpleStateMachine\Test;
 
 use Cosma\SimpleStateMachine\Graphic;
-use Cosma\SimpleStateMachine\AbstractGraphic;
+use Cosma\SimpleStateMachine\Example\States\EmptyLabelState;
 
 class GraphicTest extends \PHPUnit_Framework_TestCase
 {
@@ -70,6 +70,6 @@ class GraphicTest extends \PHPUnit_Framework_TestCase
     public function testAddTransition_EmptyTargetStateException()
     {
         $graphic = new Graphic();
-        $graphic->addTransition('fromStateId', '', '', array());
+        $graphic->addTransition('Cosma\SimpleStateMachine\Example\States\EmptyLabelState', '', '', array());
     }
 }

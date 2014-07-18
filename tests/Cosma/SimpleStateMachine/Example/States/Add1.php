@@ -14,7 +14,7 @@
 namespace Cosma\SimpleStateMachine\States;
 
 use Cosma\SimpleStateMachine\AbstractState;
-use Cosma\SimpleStateMachine\Price;
+use Cosma\SimpleStateMachine\Example\Price;
 
 class Add1 extends AbstractState
 {
@@ -37,6 +37,5 @@ class Add1 extends AbstractState
     }
 
     protected function configureAvailableTransitions()
-    {
-    }
+    {}
 } 

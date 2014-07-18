@@ -11,9 +11,10 @@
  * Time: 01:52
  */
 
-namespace Cosma\SimpleStateMachine;
+namespace Cosma\SimpleStateMachine\Test;
 
-use Cosma\SimpleStateMachine\States\EmptyLabelState;
+use Cosma\SimpleStateMachine\Graphic;
+use Cosma\SimpleStateMachine\Example\States\EmptyLabelState;
 
 class StateTest extends \PHPUnit_Framework_TestCase
 {
@@ -50,6 +51,6 @@ class StateTest extends \PHPUnit_Framework_TestCase
     {
         $state = new EmptyLabelState();
 
-        $state->addTransition('Cosma\SimpleStateMachine\States\EmptyLabelState', 'InexistentStateClass');
+        $state->addTransition('Cosma\SimpleStateMachine\Example\States\EmptyLabelState', 'InexistentStateClass');
     }
 }

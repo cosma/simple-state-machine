@@ -11,7 +11,7 @@
  * Time: 02:18
  */
 
-namespace Cosma\SimpleStateMachine;
+namespace Cosma\SimpleStateMachine\Example;
 
 
 use Cosma\SimpleStateMachine\InterfaceDataStructure;
