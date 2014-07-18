@@ -19,6 +19,8 @@ This is installable via [Composer](https://getcomposer.org/) as [cosma/simple-st
   - [Configure Transitions](#configure-transitions)
   - [Define Conditions](#define-conditions)
   - [DOT Language](#dot-language)
+- [Tests](#tests)  
+- [License](#license)  
 
 ## Usage ##
 
@@ -139,6 +141,9 @@ Links:
 Drawing graphs with DOT - http://www.graphviz.org/Documentation/dotguide.pdf
 Node Shapes - http://www.graphviz.org/doc/info/shapes.html
 
+## Tests ##
+
+vendor/phpunit/phpunit/phpunit.php -c phpunit.xml.dist  --coverage-html tests/coverage tests
 
 ## License ##
 
