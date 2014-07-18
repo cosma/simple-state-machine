@@ -52,7 +52,7 @@ class Graphic extends AbstractGraphic
      * @param array $styleAttributes
      * @return Vertex|mixed
      */
-    public function drawState($state, $label, $styleAttributes = array())
+    public function addState($state, $label, $styleAttributes = array())
     {
         $styleAttributes['label'] = $label;
         $vertex = $this->graph->createVertex($state, true);
@@ -68,7 +68,7 @@ class Graphic extends AbstractGraphic
      * @param array $styleAttributes
      * @return Directed|mixed
      */
-    public function drawTransition($fromState, $toState, $label, $styleAttributes = array())
+    public function addTransition($fromState, $toState, $label, $styleAttributes = array())
     {
         $styleAttributes['label'] = $label;
         /** @var Vertex $fromState */

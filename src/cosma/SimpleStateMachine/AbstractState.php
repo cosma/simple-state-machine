@@ -104,7 +104,7 @@ abstract class AbstractState
     {
         $this->configureAvailableTransitions();
 
-        $drawnState = $graphic->drawState($this->getId(), $this->getLabel(), $this->styleAttributes);
+        $drawnState = $graphic->addState($this->getId(), $this->getLabel(), $this->styleAttributes);
 
         if($propagation){
             /** @var Transition $transition */
@@ -124,7 +124,7 @@ abstract class AbstractState
                     $styleAttributes = $transition->getCondition()->getStyleAttributes();
                 }
 
-                $graphic->drawTransition(
+                $graphic->addTransition(
                     $drawnState,
                     $drawnNextState,
                     $label,

@@ -14,7 +14,8 @@
 namespace Cosma\SimpleStateMachine;
 
 
-abstract class AbstractGraphic {
+abstract class AbstractGraphic
+{
 
     /**
      * @see http://en.wikipedia.org/wiki/DOT_(graph_description_language)
@@ -30,6 +31,22 @@ abstract class AbstractGraphic {
      * @var mixed
      */
     protected $graph;
+
+    /**
+     * @var array
+     */
+    protected $statesStorage = array();
+
+    /**
+     * @var array
+     */
+    protected $transitionsStorage = array();
+
+    /**
+     * @var array
+     */
+    protected $legendsStorage = array();
+
 
     /**
      * @param string $format
@@ -53,7 +70,7 @@ abstract class AbstractGraphic {
      * @param array $styleAttributes
      * @return mixed
      */
-    abstract public function drawLegend($text, $styleAttributes = array());
+    abstract public function addLegend($text, $styleAttributes = array());
 
     /**
      * Draw a State
@@ -63,7 +80,7 @@ abstract class AbstractGraphic {
      * @param array $styleAttributes
      * @return mixed
      */
-    abstract public function drawState($state, $label, $styleAttributes = array());
+    abstract public function addState($state, $label, $styleAttributes = array());
 
     /**
      * Draw a Transition
@@ -74,7 +91,7 @@ abstract class AbstractGraphic {
      * @param array $styleAttributes
      * @return mixed
      */
-    abstract public function drawTransition($fromState, $toState, $label, $styleAttributes = array());
+    abstract public function addTransition($fromState, $toState, $label, $styleAttributes = array());
 
     /**
      * Export the Graph drawing
