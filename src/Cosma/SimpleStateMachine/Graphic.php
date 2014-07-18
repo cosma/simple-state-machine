@@ -13,12 +13,9 @@
 
 namespace Cosma\SimpleStateMachine;
 
-use Fhaculty\Graph\Edge\Directed;
 use Fhaculty\Graph\Exporter\Dot;
 use Fhaculty\Graph\Exporter\Image;
 use Fhaculty\Graph\Graph;
-use Fhaculty\Graph\Layoutable;
-use Fhaculty\Graph\Vertex;
 
 class Graphic extends AbstractGraphic
 {
@@ -93,9 +90,6 @@ class Graphic extends AbstractGraphic
      */
     public function draw()
     {
-
-
-
         $this->drawLegends();
         $this->drawStates();
         $this->drawTransitions();

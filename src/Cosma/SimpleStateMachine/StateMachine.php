@@ -13,6 +13,7 @@
 
 namespace Cosma\SimpleStateMachine;
 
+
 class StateMachine
 {
     /**
@@ -56,24 +57,6 @@ class StateMachine
     }
 
     /**
-     * @param AbstractState $state
-     */
-    public function setState(AbstractState $state)
-    {
-        $state->setStateMachine($this);
-
-        $this->state = $state;
-    }
-
-    /**
-     * @return AbstractState
-     */
-    public function getState()
-    {
-        return $this->state;
-    }
-
-    /**
      * @throws \Exception
      */
     public function run()
@@ -114,5 +97,23 @@ class StateMachine
     public function getStatesHistory()
     {
         return $this->statesHistory;
+    }
+
+    /**
+     * @param AbstractState $state
+     */
+    public function setState(AbstractState $state)
+    {
+        $state->setStateMachine($this);
+
+        $this->state = $state;
+    }
+
+    /**
+     * @return AbstractState
+     */
+    public function getState()
+    {
+        return $this->state;
     }
 } 

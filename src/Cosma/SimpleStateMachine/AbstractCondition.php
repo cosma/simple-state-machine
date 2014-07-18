@@ -61,14 +61,6 @@ abstract class AbstractCondition
     abstract public function isTrue();
 
     /**
-     * @param array $styleAttributes
-     */
-    public function setStyleAttributes($styleAttributes)
-    {
-        $this->styleAttributes = $styleAttributes;
-    }
-
-    /**
      * @return array
      */
     public function getStyleAttributes()

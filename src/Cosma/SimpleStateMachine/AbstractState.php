@@ -183,45 +183,28 @@ abstract class AbstractState
     }
 
     /**
-     * @return StateMachine
-     */
-    public function getStateMachine()
-    {
-        return $this->stateMachine;
-    }
-
-    /**
-     * Add Transition to a new State with an optional Condition
+     * Add Transition
      *
      * @param $newStateClassName
      * @param null $conditionClassName
-     * @throws \Exception
+     * @throws \InvalidArgumentException
      */
     public function addTransition($newStateClassName, $conditionClassName = null)
     {
+        if(!class_exists($newStateClassName)){
+            throw new \InvalidArgumentException("Class '{$newStateClassName}' cannot be loaded.");
+        }
+        /** @var AbstractState $newState */
+        $newState = new $newStateClassName($this->getDataStructure());
+        $newState->setStateMachine($this->stateMachine);
 
-        try{
-            if(!class_exists($newStateClassName)){
-                throw new \Exception();
+        $condition = null;
+        if($conditionClassName){
+            if(!class_exists($conditionClassName)){
+                throw new \InvalidArgumentException("Class '{$conditionClassName}' cannot be loaded.");
             }
-            /** @var AbstractState $newState */
-            $newState = new $newStateClassName($this->getDataStructure());
-            $newState->setStateMachine($this->stateMachine);
-
-            $condition = null;
-            if($conditionClassName){
-                if(!class_exists($conditionClassName)){
-                    throw new \Exception();
-                }
-                /** @var AbstractCondition $condition */
-                $condition = new $conditionClassName($this->getDataStructure());
-            }
-        } catch(\Exception $e){
-            throw new \Exception(
-                "Cannot load Transition from State '{$this->getId()}' ".
-                " --> to State '{$newStateClassName}'".
-                " with Condition '{$conditionClassName}' : {$e->getMessage()} "
-            );
+            /** @var AbstractCondition $condition */
+            $condition = new $conditionClassName($this->getDataStructure());
         }
 
         $this->availableTransitions[] = new Transition($newState, $condition);
@@ -234,5 +217,4 @@ abstract class AbstractState
     {
         return $this->dataStructure;
     }
-
 } 

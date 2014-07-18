@@ -16,7 +16,6 @@ namespace Cosma\SimpleStateMachine;
 
 abstract class AbstractGraphic
 {
-
     /**
      * @see http://en.wikipedia.org/wiki/DOT_(graph_description_language)
      *
@@ -69,6 +68,12 @@ abstract class AbstractGraphic
      * @return mixed
      */
     abstract protected function setGraph();
+
+    /**
+     * Export the Graph drawing
+     * @return mixed
+     */
+    abstract public function draw();
 
     /**
      * Add Legend
@@ -159,9 +164,8 @@ abstract class AbstractGraphic
         return $transitionId;
     }
 
-    /**
-     * Export the Graph drawing
-     * @return mixed
-     */
-    abstract public function draw();
+    public function isDOTInstalled() {
+        $returnValue = @shell_exec("which dot");
+        return (empty($returnValue) ? false : true);
+    }
 } 
