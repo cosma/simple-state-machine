@@ -1,9 +1,10 @@
 SimpleStateMachine -  A very simple State Machine  [![Build Status](https://drone.io/bitbucket.org/cosma/simple-state-machine/status.png)](https://drone.io/bitbucket.org/cosma/simple-state-machine/latest)
 =================================================
 
-A Simple State Machine without persistent states.
-A DataEntry object will just go thru different state without timeouts.
-The State Machine structure can be visualised in a UML diagram
+- A Simple State Machine without persistent states.
+- A Data Structure object will just go immediately from one State to another different State without timeouts.
+- States can be defined to modify the Data Structure object.
+- The State Machine graph can be visualised in a UML diagram generated in different formats.
 
 
 
