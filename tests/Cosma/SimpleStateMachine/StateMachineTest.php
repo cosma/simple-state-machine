@@ -214,10 +214,9 @@ class StateMachineTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     *
-     * @see Cosma\SimpleStateMachine\StateMachine
+     * @see Cosma\SimpleStateMachine\StateMachine::draw
      */
-    public function testGraph_Graphic()
+    public function testGraph_SaveSvgToDisk()
     {
         @unlink('tests/coverage/_stateMachine.html');
         $file = @fopen('tests/coverage/_stateMachine.html', 'w+');
