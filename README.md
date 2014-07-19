@@ -228,8 +228,7 @@ namespace \MyProject\PriceStateMachine\States;
 
 class MyState extends \Cosma\SimpleStateMachine\AbstractState
 {
-    .
-    .
+    ...
     /**
     * @var array
     */
@@ -240,8 +239,8 @@ class MyState extends \Cosma\SimpleStateMachine\AbstractState
         'fontsize' => 12,
         'penwidth' => 1,
     );
-    .
-    .
+
+    ...
 }
 ```
 
