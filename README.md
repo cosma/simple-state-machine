@@ -232,7 +232,7 @@ The output is delivered in various formats.
 
 The most used are:
 
-- [SVG](composer,json)
+- [SVG](https://bitbucket.org/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/SVG.xml)
 - PDF
 - PNG
 - DOT
