@@ -229,6 +229,7 @@ namespace \MyProject\PriceStateMachine\States;
 class MyState extends \Cosma\SimpleStateMachine\AbstractState
 {
     ...
+
     /**
     * @var array
     */
