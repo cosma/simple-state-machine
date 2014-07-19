@@ -232,7 +232,7 @@ The output is delivered in various formats.
 
 The most used are:
 
-- [SVG](https://getcomposer.org/)
+- [SVG](composer,json)
 - PDF
 - PNG
 - DOT

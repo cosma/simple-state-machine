@@ -222,19 +222,17 @@ class StateMachineTest extends \PHPUnit_Framework_TestCase
      */
     public function testGraph_SaveSvgToDisk()
     {
-        $format = "bmp";
+        @unlink('tests/coverage/_stateMachine.html');
+        $file = @fopen('tests/coverage/_stateMachine.html', 'w+');
 
-        @unlink('tests/coverage/_stateMachine.'.$format);
-        $file = @fopen('tests/coverage/_stateMachine.'.$format, 'w+');
-
-        $graphic = new Graphic($format);
+        $graphic = new Graphic('svg');
 
         if(!$graphic->isDOTInstalled())
         {
             $this->markTestSkipped("dot command from graphviz is not installed. Please try 'sudo apt-get install graphviz'");
         }
 
-        $stateMachine = new StateMachine('Simple State Machine Example');
+        $stateMachine = new StateMachine();
 
         $startState = new Subst2();
         $stateMachine->setState($startState);
