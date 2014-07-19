@@ -246,8 +246,8 @@ class MyState extends \Cosma\SimpleStateMachine\AbstractState
 ```
 
 DOT Useful Links:
-Drawing graphs with DOT - http://www.graphviz.org/Documentation/dotguide.pdf
-Node Shapes - http://www.graphviz.org/doc/info/shapes.html
+1. Drawing graphs with DOT - http://www.graphviz.org/Documentation/dotguide.pdf
+2. Node Shapes - http://www.graphviz.org/doc/info/shapes.html
 
 ## Tests ##
 
