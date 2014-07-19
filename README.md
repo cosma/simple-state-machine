@@ -7,6 +7,7 @@ SimpleStateMachine -  A very simple State Machine  [![Build Status](https://dron
 
 
 ## Table of Contents
+--------------------
 
 - [Installation](#markdown-header-installation)
 - [Usage](#markdown-header-usage)
@@ -23,7 +24,7 @@ SimpleStateMachine -  A very simple State Machine  [![Build Status](https://dron
 
 
 ## Installation ##
-========
+------------------
 
 This is installable via [Composer](https://getcomposer.org/) as [cosma/simple-state-machine](https://packagist.org/packages/cosma/simple-state-machine).
 
@@ -39,7 +40,7 @@ This is installable via [Composer](https://getcomposer.org/) as [cosma/simple-st
 
 
 ## Usage ##
-=========
+-----------
 
 To use State Machine is very simple.
 
@@ -95,7 +96,7 @@ echo $diagramSVG;
 
 
 ## Reference ##
-
+---------------
 
 ### Defining Data ###
 
@@ -124,6 +125,7 @@ class Price implements \Cosma\SimpleStateMachine\InterfaceData
     ...
 }
 ```
+
 
 
 ### Defining States ###
@@ -207,6 +209,7 @@ class SomeWildCondition extends \Cosma\SimpleStateMachine\AbstractCondition
 ```
 
 
+
 ### Graph Diagram ###
 
 You can easily visualise the State Machine Diagram
@@ -227,10 +230,11 @@ The supported  formats are almost all image formats: .svg, .png, .jpg, .gif.
 
 One special format is dot format.
 
+
+
 ### DOT Language ###
 
 Stands for graph description language and you can read more [here](http://en.wikipedia.org/wiki/DOT_(graph_description_language))
-
 
 To take fully advantage of style attributes you need to know DOT language.
 
@@ -265,12 +269,19 @@ DOT Useful Links:
 
 2. Node Shapes - [shapes of a node](http://www.graphviz.org/doc/info/shapes.html)
 
+
+
 ## Tests ##
+-----------
 
 ```bash
 vendor/phpunit/phpunit/phpunit.php --coverage-text  --coverage-html=tests/coverage tests
 ```
 
+
+
+
 ## License ##
+--------------
 
 Released under the MIT License, see LICENSE.
