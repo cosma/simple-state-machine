@@ -30,6 +30,7 @@ To use State Machine is very simple.
 Let's follow the simple example of a simple price calculator state machine.
 
 ```
+
 #!php
 
 namespace \MyProject;
