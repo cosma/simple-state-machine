@@ -18,6 +18,7 @@ This is installable via [Composer](https://getcomposer.org/) as [cosma/simple-st
     - [Defining Data](#defining-data)
     - [Defining States](#defining-states)
     - [Define Conditions](#define-conditions)
+    - [Graph Diagram](#graph-diagram)
     - [DOT Language](#dot-language)
 - [Tests](#tests)  
 - [License](#license)  
@@ -29,6 +30,8 @@ To use State Machine is very simple.
 Let's follow the simple example of a simple price calculator state machine.
 
 ```php
+namespace \MyProject;
+
 /**
 *   Simple State Machine
 */
@@ -74,7 +77,6 @@ echo $diagramSVG;
 ```
 
 ## Reference ##
-
 
 ### Defining Data ###
 
@@ -137,7 +139,7 @@ class AddVATState extends \Cosma\SimpleStateMachine\AbstractState
     /**
     *   Configure the Transitions from this State to another States or itself in case of a loop
     *   You may set in what Condition that Transition takes place
-    *   The order to check up the validity of conditions and forward to next State is from up to down
+    *   The order to check upon the validity of conditions and forward to next State is from up to down
     */
     protected function configureAvailableTransitions()
     {
@@ -147,16 +149,15 @@ class AddVATState extends \Cosma\SimpleStateMachine\AbstractState
         .
         .
     }
-
 }
 ```
 
-
 ### Defining Conditions ###
 
-A transition between states is possible directly when there is no condition or,
+A Transition between states is possible directly when there is no condition or,
 if there is a condition, only when that condition is true.
-A Condition must extend \Cosma\SimpleStateMachine\AbstractCondition class
+
+All Conditions must extend \Cosma\SimpleStateMachine\AbstractCondition class
 
 ```php
 namespace namespace \MyProject\PriceStateMachine\Conditions;
@@ -185,17 +186,40 @@ class SomeWildCondition extends \Cosma\SimpleStateMachine\AbstractCondition
 ```
 
 
+### Graph Diagram ###
+
+You can easily visualise the State Machine Diagram
+
+```php
+namespace \MyProject;
+
+/**
+*   Generate the Diagram of the State Machine.
+*   Choose the format
+*/
+$graphic = new Graphic('svg');
+$diagramSVG = $priceStateMachine->draw($graphic);
+
+echo $diagramSVG;
+```
+The supported  formats are almost all image formats: .svg, .png, .jpg, .gif
+One special format is dot format
+
 ### DOT Language ###
 
+Stands for graph description language and you cane read more following the link http://en.wikipedia.org/wiki/DOT_(graph_description_language)
 To take fully advantage of style attributes you need to know DOT language:
 
-Links:
+
+Useful Links:
 Drawing graphs with DOT - http://www.graphviz.org/Documentation/dotguide.pdf
 Node Shapes - http://www.graphviz.org/doc/info/shapes.html
 
 ## Tests ##
 
-vendor/phpunit/phpunit/phpunit.php -c phpunit.xml.dist  --coverage-html tests/coverage tests
+```bash
+vendor/phpunit/phpunit/phpunit.php --coverage-text  --coverage-html=tests/coverage tests
+```
 
 ## License ##
 
