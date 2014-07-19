@@ -28,7 +28,7 @@ class EmptyLabelState extends AbstractState
     /**
      * @return mixed|void
      */
-    protected function processDataStructure()
+    protected function process()
     {}
 
     /**

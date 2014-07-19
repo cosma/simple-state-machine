@@ -70,7 +70,7 @@ abstract class AbstractState
      *
      * @return mixed
      */
-    abstract protected function processDataStructure();
+    abstract protected function process();
 
     /**
      * Configure available Transitions to another States.
@@ -87,7 +87,7 @@ abstract class AbstractState
         $this->configureAvailableTransitions();
 
         $this->stateMachine->setState($this);
-        $this->processDataStructure();
+        $this->process();
         $this->stateMachine->addStateToHistory($this);
         $this->doTransition();
 

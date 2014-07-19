@@ -80,13 +80,13 @@ echo $diagramSVG;
 ### Defining Data ###
 
 The Data object can be modify by the State Machines transitions and State.
-Must implement the interface \Cosma\SimpleStateMachine\InterfaceData.
-This is a empty interface but is used to force Type hinting.
+The Data class must implement the interface \Cosma\SimpleStateMachine\InterfaceData.
+InterfaceData is a empty interface but is used to force Type hinting.
 
 ```php
-namespace \YourProject\PriceStateMachine;
+namespace \MyProject\PriceStateMachine;
 
-class Price extends \Cosma\SimpleStateMachine\InterfaceData
+class Price implements \Cosma\SimpleStateMachine\InterfaceData
 {
     /**
     *   @var float
@@ -99,7 +99,7 @@ class Price extends \Cosma\SimpleStateMachine\InterfaceData
     }
 
     /**
-    *   setter getters and other functions
+    *    getters, setters and other functions
     */
     .
     .
@@ -108,24 +108,55 @@ class Price extends \Cosma\SimpleStateMachine\InterfaceData
 }
 ```
 
-This works fine, but it is not very powerful and is completely static. You
-still have to do most of the work. Let's see how to make this more interesting.
-
-
-
-
-
-
-
-
-
 ### Defining States ###
 
-All states must extend the AbstractState class
+All states must extend the class \Cosma\SimpleStateMachine\AbstractState
+
+```php
+namespace \MyProject\PriceStateMachine\States;
+
+class AddVATState extends \Cosma\SimpleStateMachine\AbstractState
+{
+    /**
+    *   Set the label for this State used in State Machine diagram
+    */
+    public function getLabel()
+    {
+        return 'Add VAT Tax';
+    }
+
+    /**
+    *   Modify the Data object
+    */
+    protected function process()
+    {
+        $price = $this->getData();
+        $price->setValue($price->getValue() * 1.19);
+        .
+        .
+
+    }
+
+    /**
+    *   Configure the Transitions from this State to another States or itself in case of a loop
+    *   You may set in what Condition that Transition takes place
+    *   The order to check up the validity of conditions and forward to next State is from up to down
+    */
+    protected function configureAvailableTransitions()
+    {
+        $this->addTransition('\YourProject\PriceStateMachine\States\AddDiscount', '\YourProject\PriceStateMachine\Conditions\IfGreaterThan1000');
+        $this->addTransition('NewStateClass', 'ConditionClass');
+        $this->addTransition('\YourProject\PriceStateMachine\States\AddDiscount');
+        .
+        .
+    }
+
+}
+```
 
 ```php
 
-namespace \YourBundle\StateMachineProcess\States\SomeState;
+namespace \MyProject\StateMachineProcess\States\SomeState;
 
 class SomeState extends \Cosma\SimpleStateMachine\Abstract\State
 {

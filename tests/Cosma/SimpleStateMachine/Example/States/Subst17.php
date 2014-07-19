@@ -30,7 +30,7 @@ class Subst17 extends AbstractState
     /**
      * @return mixed|void
      */
-    protected function processDataStructure()
+    protected function process()
     {
         /** @var Price $price */
         $price = $this->getData();
