@@ -16,6 +16,7 @@ SimpleStateMachine -  A very simple State Machine  [![Build Status](https://dron
     - [Defining States](#markdown-header-defining-states)
     - [Define Conditions](#markdown-header-define-conditions)
     - [Graph Diagram](#markdown-header-graph-diagram)
+    - [Export Formats](#markdown-header-export-formats)
     - [DOT Language](#markdown-header-dot-language)
 - [Tests](#markdown-header-tests)
 - [License](#markdown-header-license)
@@ -228,10 +229,14 @@ $diagramSVG = $priceStateMachine->draw($graphic);
 echo $diagramSVG;
 ```
 
+
+
+### Export Formats ###
+
+
 The output is delivered in various formats.
 
 The most used export formats are:
-
 
 - [PNG](https://bitbucket.org/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/PNG.png)
 - [PDF](https://bitbucket.org/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/PDF.pdf)
