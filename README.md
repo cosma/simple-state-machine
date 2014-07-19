@@ -28,8 +28,8 @@ This is installable via [Composer](https://getcomposer.org/) as [cosma/simple-st
     - [Define Conditions](#markdown-header-define-conditions)
     - [Graph Diagram](#markdown-header-graph-diagram)
     - [DOT Language](#markdown-header-dot-language)
-- [Tests](#tests)  
-- [License](#license)  
+- [Tests](#markdown-header-tests)
+- [License](#markdown-header-license)
 
 ## Usage ##
 
