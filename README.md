@@ -244,9 +244,9 @@ The most used export formats are:
 - [DOT](https://bitbucket.org/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/DOT.dot)
 - [EPS](https://bitbucket.org/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/EPS.eps)
 - [TIFF](https://bitbucket.org/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/TIFF.tiff)
-- [JPG](https://bitbucket.org/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/JPG.jpg)
-- [GIF](https://bitbucket.org/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/GIF.gif)
-- [BMP](https://bitbucket.org/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/BMP.bmp)
+- [JPG](https://bitbucket.org/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/JPG.jpg) (low quality)
+- [GIF](https://bitbucket.org/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/GIF.gif) (low quality)
+- [BMP](https://bitbucket.org/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/BMP.bmp) (low quality)
 
 All supported formats are the DOT output formats: bmp, canon, cgimage, cmap, cmapx, cmapx_np, dot, eps, exr, fig, gif, gv, icns,
 ico, imap, imap_np, ismap, jp2, jpe, jpeg, jpg, pct, pdf, pic, pict, plain, plain-ext, png, pov, ps, ps2, psd, sgi, svg, svgz,
