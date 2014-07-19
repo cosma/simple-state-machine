@@ -230,15 +230,15 @@ echo $diagramSVG;
 
 The output is delivered in various formats.
 
-The most used are:
+The most used export formats are:
 
 - [SVG](https://bitbucket.org/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/SVG.xml)
-- PDF
-- PNG
-- DOT
-- EPS
-- GIF
-- JPG
+- [PDF](https://bitbucket.org/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/PDF.pdf)
+- [PNG](https://bitbucket.org/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/PNG.png)
+- [DOT](https://bitbucket.org/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/DOT.dot)
+- [EPS](https://bitbucket.org/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/EPS.eps)
+- [GIF](https://bitbucket.org/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/GIf.gif)
+- [JPG](https://bitbucket.org/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/JPG.jpg)
 
 All supported formats are the DOT output formats: bmp canon cgimage cmap cmapx cmapx_np dot eps exr fig gif gv icns ico imap imap_np ismap jp2 jpe jpeg jpg pct pdf pic pict plain plain-ext png pov ps ps2 psd sgi svg svgz tga tif tiff tk vml vmlz x11 xdot xdot1.2 xdot1.4 xlib
 
