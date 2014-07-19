@@ -1,13 +1,13 @@
 {
-    "name": "Cosma/simple-state-machine",
+    "name": "cosma/simple-state-machine",
     "description": "Simple State Machine",
     "keywords": ["state machine", "non persistent", "graph generation"],
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "SimpleStateMachine",
-            "homepage": "http://bitbucket.org/Cosma/simple-state-machine"
+            "name": "Cosmin Voicu",
+            "homepage": "http://bitbucket.org/cosma/simple-state-machine"
         }
     ],
     "minimum-stability": "stable",
