@@ -14,7 +14,7 @@
 namespace Cosma\SimpleStateMachine\Example\Conditions;
 
 use Cosma\SimpleStateMachine\AbstractCondition;
-use Cosma\SimpleStateMachine\Price;
+use Cosma\SimpleStateMachine\Example\Price;
 
 class LessThan50 extends AbstractCondition
 {

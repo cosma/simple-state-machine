@@ -17,7 +17,6 @@ This is installable via [Composer](https://getcomposer.org/) as [cosma/simple-st
 - [Reference](#reference)
     - [Defining Data](#defining-data)
     - [Defining States](#defining-states)
-    - [Configure Transitions](#configure-transitions)
     - [Define Conditions](#define-conditions)
     - [DOT Language](#dot-language)
 - [Tests](#tests)  
@@ -103,8 +102,6 @@ class Price implements \Cosma\SimpleStateMachine\InterfaceData
     */
     .
     .
-    .
-
 }
 ```
 
@@ -154,81 +151,36 @@ class AddVATState extends \Cosma\SimpleStateMachine\AbstractState
 }
 ```
 
-```php
-
-namespace \MyProject\StateMachineProcess\States\SomeState;
-
-class SomeState extends \Cosma\SimpleStateMachine\Abstract\State
-{
-    /**
-    *   process that modifies the DataStructure in this state
-    */
-    protected process()
-    {
-        $this->getDataStructure->doSomething()
-    }
-
-    ....
-}
-```
-
-This works fine, but it is not very powerful and is completely static. You
-still have to do most of the work. Let's see how to make this more interesting.
-
-### Configure Transitions ###
-
-To link states is very easy
-
-```php
-
-namespace  \YourBundle\StateMachineProcess\States\SomeState;
-
-class SomeState extends \Cosma\SimpleStateMachine\Abstract\State
-{
-    protected process()
-    {
-       ....
-    }
-
-    /**
-    *   configure forward to another states
-    */
-    protected configureTransitions()
-    {
-       $this->addTransition(new \YourBundle\StateMachineProcess\States\AnotherState($this->getDataStricture()));
-
-       .
-       .
-       .
-
-       $this->addTransition(
-           new \YourBundle\StateMachineProcess\States\LastState($this->getDataStricture()),
-           new \YourBundle\StateMachineProcess\Conditions\ConditionToLastState($this->getDataStricture())
-       );
-    }
-}
-```
 
 ### Defining Conditions ###
 
-A transition between states is possible directly when there's no condition or, if there's a condition, only when that condition is true.
-To define a Condition is simple
+A transition between states is possible directly when there is no condition or,
+if there is a condition, only when that condition is true.
+A Condition must extend \Cosma\SimpleStateMachine\AbstractCondition class
 
 ```php
+namespace namespace \MyProject\PriceStateMachine\Conditions;
 
-namespace \YourBundle\StateMachineProcess\Conditions\SomeCondition;
-
-class SomeCondition extends \Cosma\SimpleStateMachine\Abstract\Condition
+class SomeWildCondition extends \Cosma\SimpleStateMachine\AbstractCondition
 {
     /**
-    *   process that modifies the DataStructure in this state
+    *   @return string
     */
-    protected process()
+    public function getLabel()
     {
-        $this->getDataStructure->verifySomeConditions()
+        return "Some Wild Condition";
     }
 
-    ....
+    /**
+    *   @return bool
+    */
+    public function isTrue()
+    {
+        $data = $this->getData();
+        return $this->checkSomething($data);
+    }
+    .
+    .
 }
 ```
 
