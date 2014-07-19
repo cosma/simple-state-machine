@@ -6,7 +6,24 @@ SimpleStateMachine -  A very simple State Machine  [![Build Status](https://dron
 - The State Machine graph can be visualised in a UML diagram generated in different formats.
 
 
+## Table of Contents
+
+- [Installation](#markdown-header-installation)
+- [Usage](#markdown-header-usage)
+- [Reference](#markdown-header-reference)
+    - [Defining Data](#markdown-header-defining-data)
+    - [Defining States](#markdown-header-defining-states)
+    - [Define Conditions](#markdown-header-define-conditions)
+    - [Graph Diagram](#markdown-header-graph-diagram)
+    - [DOT Language](#markdown-header-dot-language)
+- [Tests](#markdown-header-tests)
+- [License](#markdown-header-license)
+
+
+
+
 ## Installation ##
+========
 
 This is installable via [Composer](https://getcomposer.org/) as [cosma/simple-state-machine](https://packagist.org/packages/cosma/simple-state-machine).
 
@@ -19,19 +36,10 @@ This is installable via [Composer](https://getcomposer.org/) as [cosma/simple-st
 ```
 
 
-## Table of Contents
 
-- [Usage](#markdown-header-usage)
-- [Reference](#markdown-header-reference)
-    - [Defining Data](#markdown-header-defining-data)
-    - [Defining States](#markdown-header-defining-states)
-    - [Define Conditions](#markdown-header-define-conditions)
-    - [Graph Diagram](#markdown-header-graph-diagram)
-    - [DOT Language](#markdown-header-dot-language)
-- [Tests](#markdown-header-tests)
-- [License](#markdown-header-license)
 
 ## Usage ##
+=========
 
 To use State Machine is very simple.
 
@@ -84,7 +92,10 @@ $diagramSVG = $priceStateMachine->draw($graphic);
 echo $diagramSVG;
 ```
 
+
+
 ## Reference ##
+
 
 ### Defining Data ###
 
@@ -113,6 +124,7 @@ class Price implements \Cosma\SimpleStateMachine\InterfaceData
     ...
 }
 ```
+
 
 ### Defining States ###
 
@@ -160,6 +172,7 @@ class AddVATState extends \Cosma\SimpleStateMachine\AbstractState
     }
 }
 ```
+
 
 ### Defining Conditions ###
 
