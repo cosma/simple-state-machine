@@ -21,13 +21,13 @@ This is installable via [Composer](https://getcomposer.org/) as [cosma/simple-st
 
 ## Table of Contents
 
-- [Usage](#usage)
-- [Reference](#reference)
-    - [Defining Data](#defining-data)
-    - [Defining States](#defining-states)
-    - [Define Conditions](#define-conditions)
-    - [Graph Diagram](#graph-diagram)
-    - [DOT Language](#dot-language)
+- [Usage](#markdown-header-usage)
+- [Reference](#markdown-header-reference)
+    - [Defining Data](#markdown-header-defining-data)
+    - [Defining States](#markdown-header-defining-states)
+    - [Define Conditions](#markdown-header-define-conditions)
+    - [Graph Diagram](#markdown-header-graph-diagram)
+    - [DOT Language](#markdown-header-dot-language)
 - [Tests](#tests)  
 - [License](#license)  
 
