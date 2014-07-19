@@ -6,7 +6,6 @@ SimpleStateMachine -  A very simple State Machine  [![Build Status](https://dron
 - The State Machine graph can be visualised in a UML diagram generated in different formats.
 
 
-
 ## Installation ##
 
 This is installable via [Composer](https://getcomposer.org/) as [cosma/simple-state-machine](https://packagist.org/packages/cosma/simple-state-machine).
