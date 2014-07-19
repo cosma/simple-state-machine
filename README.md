@@ -10,6 +10,15 @@ SimpleStateMachine -  A very simple State Machine  [![Build Status](https://dron
 
 This is installable via [Composer](https://getcomposer.org/) as [cosma/simple-state-machine](https://packagist.org/packages/cosma/simple-state-machine).
 
+```php
+{
+    "require": {
+        "cosma/simple-state-machine": "1.0.*"
+    }
+}
+```
+
+
 ## Table of Contents
 
 - [Usage](#usage)
