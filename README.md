@@ -208,8 +208,8 @@ One special format is dot format.
 
 ### DOT Language ###
 
-Stands for graph description language and you can read more following the link
-http://en.wikipedia.org/wiki/DOT_(graph_description_language)
+Stands for graph description language and you can read more [here](http://en.wikipedia.org/wiki/DOT_(graph_description_language))
+
 
 To take fully advantage of style attributes you need to know DOT language.
 
