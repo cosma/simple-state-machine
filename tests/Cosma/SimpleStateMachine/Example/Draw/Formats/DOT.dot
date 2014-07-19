@@ -1,0 +1,17 @@
+digraph G {
+  "Simple State Machine Example" [color="#8E949B" shape="box" peripheries=2 fillcolor="pink2" style="filled" penwidth=1 fontcolor="#ffffff" height=0 label="Simple State Machine Example"]
+  "Cosma\\SimpleStateMachine\\Example\\States\\Subst2" [fillcolor="#A8CE9F" style="filled" fontcolor="#000000" fontsize=12 penwidth=1 label="Subst 2"]
+  "Cosma\\SimpleStateMachine\\Example\\States\\Subst40" [color="#8E949B" fillcolor="#D3E3F5" style="filled" fontcolor="#000000" fontsize=12 penwidth=1 label="Subst 40"]
+  "Cosma\\SimpleStateMachine\\Example\\States\\Add5" [color="#8E949B" fillcolor="#D3E3F5" style="filled" fontcolor="#000000" fontsize=12 penwidth=1 label="Add 5"]
+  "Cosma\\SimpleStateMachine\\Example\\States\\Add20" [color="#8E949B" fillcolor="#D3E3F5" style="filled" fontcolor="#000000" fontsize=12 penwidth=1 label="Add 20"]
+  "Cosma\\SimpleStateMachine\\Example\\States\\Add15" [color="#8E949B" fillcolor="#D3E3F5" style="filled" fontcolor="#000000" fontsize=12 penwidth=1 label="Add 15"]
+  "Cosma\\SimpleStateMachine\\Example\\States\\Subst17" [color="#8E949B" fillcolor="#D3E3F5" style="filled" fontcolor="#000000" fontsize=12 penwidth=1 label="Subst 17"]
+  "Cosma\\SimpleStateMachine\\Example\\States\\Subst2" -> "Cosma\\SimpleStateMachine\\Example\\States\\Subst40" [color="#8E949B" style="bold" fontcolor="#000000" fontsize=9 penwidth=1 labeldistance=3 labelangle=5 decorate=1 label=" &gt; 50"]
+  "Cosma\\SimpleStateMachine\\Example\\States\\Add20" -> "Cosma\\SimpleStateMachine\\Example\\States\\Add20" [color="#8E949B" style="bold" fontcolor="#000000" fontsize=9 penwidth=1 labeldistance=3 labelangle=5 decorate=1 label="Less \l Than 30" dir="none"]
+  "Cosma\\SimpleStateMachine\\Example\\States\\Add20" -> "Cosma\\SimpleStateMachine\\Example\\States\\Subst40" [color="#8E949B" style="bold" fontcolor="#000000" fontsize=9 penwidth=1 label=""]
+  "Cosma\\SimpleStateMachine\\Example\\States\\Add5" -> "Cosma\\SimpleStateMachine\\Example\\States\\Add20" [color="#8E949B" style="bold" fontcolor="#000000" fontsize=9 penwidth=1 labeldistance=3 labelangle=5 decorate=1 label="Less \l Than 30"]
+  "Cosma\\SimpleStateMachine\\Example\\States\\Add5" -> "Cosma\\SimpleStateMachine\\Example\\States\\Add15" [color="#8E949B" style="bold" fontcolor="#000000" fontsize=9 penwidth=1 labeldistance=3 labelangle=5 decorate=1 label="Less \l Than 50"]
+  "Cosma\\SimpleStateMachine\\Example\\States\\Add5" -> "Cosma\\SimpleStateMachine\\Example\\States\\Subst17" [color="#8E949B" style="bold" fontcolor="#000000" fontsize=9 penwidth=1 label=""]
+  "Cosma\\SimpleStateMachine\\Example\\States\\Subst2" -> "Cosma\\SimpleStateMachine\\Example\\States\\Add5" [color="#8E949B" style="bold" fontcolor="#000000" fontsize=9 penwidth=1 labeldistance=3 labelangle=5 decorate=1 label="Greater \l Than 20"]
+  "Cosma\\SimpleStateMachine\\Example\\States\\Subst2" -> "Cosma\\SimpleStateMachine\\Example\\States\\Add20" [color="#8E949B" style="bold" fontcolor="#000000" fontsize=9 penwidth=1 label=""]
+}
