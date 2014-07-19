@@ -232,15 +232,13 @@ The output is delivered in various formats.
 
 The most used are:
 
-- SVG
+- [SVG](https://getcomposer.org/)
 - PDF
 - PNG
 - DOT
 - EPS
 - GIF
 - JPG
-
-...
 
 All supported formats are the DOT output formats: bmp canon cgimage cmap cmapx cmapx_np dot eps exr fig gif gv icns ico imap imap_np ismap jp2 jpe jpeg jpg pct pdf pic pict plain plain-ext png pov ps ps2 psd sgi svg svgz tga tif tiff tk vml vmlz x11 xdot xdot1.2 xdot1.4 xlib
 
