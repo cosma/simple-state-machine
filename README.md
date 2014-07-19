@@ -143,8 +143,13 @@ class AddVATState extends \Cosma\SimpleStateMachine\AbstractState
     */
     protected function configureAvailableTransitions()
     {
-        $this->addTransition('\YourProject\PriceStateMachine\States\AddDiscount', '\YourProject\PriceStateMachine\Conditions\IfGreaterThan1000');
+        $this->addTransition(
+                            '\YourProject\PriceStateMachine\States\AddDiscount',
+                            '\YourProject\PriceStateMachine\Conditions\IfGreaterThan1000'
+        );
+
         $this->addTransition('NewStateClass', 'ConditionClass');
+
         $this->addTransition('\YourProject\PriceStateMachine\States\AddDiscount');
         .
         .
@@ -202,16 +207,45 @@ $diagramSVG = $priceStateMachine->draw($graphic);
 
 echo $diagramSVG;
 ```
-The supported  formats are almost all image formats: .svg, .png, .jpg, .gif
-One special format is dot format
+The supported  formats are almost all image formats: .svg, .png, .jpg, .gif.
+
+One special format is dot format.
 
 ### DOT Language ###
 
-Stands for graph description language and you cane read more following the link http://en.wikipedia.org/wiki/DOT_(graph_description_language)
-To take fully advantage of style attributes you need to know DOT language:
+Stands for graph description language and you can read more following the link
+http://en.wikipedia.org/wiki/DOT_(graph_description_language)
 
+To take fully advantage of style attributes you need to know DOT language.
 
-Useful Links:
+When defining a Condition or a State, you can easily modify the protected $styleAttributes property
+and overwrite the default style for a State or a Condition.
+
+By this you can manipulate the color, font and shape of States and Conditions
+
+```php
+namespace \MyProject\PriceStateMachine\States;
+
+class MyState extends \Cosma\SimpleStateMachine\AbstractState
+{
+    .
+    .
+    /**
+    * @var array
+    */
+    protected $styleAttributes = array(
+        'fillcolor' => '#A8CE9F',
+        'style' => 'filled',
+        'fontcolor' => '#000000',
+        'fontsize' => 12,
+        'penwidth' => 1,
+    );
+    .
+    .
+}
+```
+
+DOT Useful Links:
 Drawing graphs with DOT - http://www.graphviz.org/Documentation/dotguide.pdf
 Node Shapes - http://www.graphviz.org/doc/info/shapes.html
 
