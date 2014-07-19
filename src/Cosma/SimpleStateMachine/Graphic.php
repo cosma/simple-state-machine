@@ -87,6 +87,7 @@ class Graphic extends AbstractGraphic
      * Draw to desired format
      *
      * @return mixed|string
+     * @throws \UnexpectedValueException
      */
     public function draw()
     {
@@ -101,6 +102,8 @@ class Graphic extends AbstractGraphic
             $exporter = new Image();
             $exporter->setFormat($this->format);
         }
-        return $exporter->getOutput($this->graph);
+
+        $output = $exporter->getOutput($this->graph);
+        return $output;
     }
 } 

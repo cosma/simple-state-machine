@@ -222,10 +222,12 @@ class StateMachineTest extends \PHPUnit_Framework_TestCase
      */
     public function testGraph_SaveSvgToDisk()
     {
-        @unlink('tests/coverage/_stateMachine.html');
-        $file = @fopen('tests/coverage/_stateMachine.html', 'w+');
+        $format = "bmp";
 
-        $graphic = new Graphic('svg');
+        @unlink('tests/coverage/_stateMachine.'.$format);
+        $file = @fopen('tests/coverage/_stateMachine.'.$format, 'w+');
+
+        $graphic = new Graphic($format);
 
         if(!$graphic->isDOTInstalled())
         {

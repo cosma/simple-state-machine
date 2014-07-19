@@ -2,7 +2,7 @@ SimpleStateMachine -  A very simple State Machine  [![Build Status](https://dron
 =================================================
 
 - A Simple State Machine without persistence and timeouts.
-- States can be defined to modify the Data Structure object.
+- States can modify a Data object which will be injected in the initial State.
 - The State Machine graph can be visualised in a UML diagram generated in different formats.
 
 
@@ -12,7 +12,7 @@ SimpleStateMachine -  A very simple State Machine  [![Build Status](https://dron
 - [Installation](#markdown-header-installation)
 - [Usage](#markdown-header-usage)
 - [Reference](#markdown-header-reference)
-    - [Defining Data](#markdown-header-defining-data)
+    - [Defining Data Object](#markdown-header-defining-data-object)
     - [Defining States](#markdown-header-defining-states)
     - [Define Conditions](#markdown-header-define-conditions)
     - [Graph Diagram](#markdown-header-graph-diagram)
@@ -26,7 +26,8 @@ SimpleStateMachine -  A very simple State Machine  [![Build Status](https://dron
 ## Installation ##
 ------------------
 
-This is installable via [Composer](https://getcomposer.org/) as [cosma/simple-state-machine](https://packagist.org/packages/cosma/simple-state-machine).
+Simple State Machine is installable via [Composer](https://getcomposer.org/)
+as [cosma/simple-state-machine](https://packagist.org/packages/cosma/simple-state-machine).
 
 ```php
 {
@@ -42,9 +43,7 @@ This is installable via [Composer](https://getcomposer.org/) as [cosma/simple-st
 ## Usage ##
 -----------
 
-To use State Machine is very simple.
-
-Let's follow the simple example of a simple price calculator state machine.
+Let's follow the example of a simple price calculator state machine.
 
 ```php
 namespace \MyProject;
@@ -98,10 +97,12 @@ echo $diagramSVG;
 ## Reference ##
 ---------------
 
-### Defining Data ###
+### Defining Data Object ###
 
 The Data object can be modify by the State Machines transitions and State.
+
 The Data class must implement the interface \Cosma\SimpleStateMachine\InterfaceData.
+
 InterfaceData is a empty interface but is used to force Type hinting.
 
 ```php
@@ -226,9 +227,22 @@ $diagramSVG = $priceStateMachine->draw($graphic);
 
 echo $diagramSVG;
 ```
-The supported  formats are almost all image formats: .svg, .png, .jpg, .gif.
 
-One special format is dot format.
+The output is delivered in various formats.
+
+The most used are:
+
+- SVG
+- PDF
+- PNG
+- DOT
+- EPS
+- GIF
+- JPG
+
+...
+
+All supported formats are the DOT output formats: bmp canon cgimage cmap cmapx cmapx_np dot eps exr fig gif gv icns ico imap imap_np ismap jp2 jpe jpeg jpg pct pdf pic pict plain plain-ext png pov ps ps2 psd sgi svg svgz tga tif tiff tk vml vmlz x11 xdot xdot1.2 xdot1.4 xlib
 
 
 
