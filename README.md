@@ -242,7 +242,7 @@ DOT Useful Links:
 
 1. Drawing graphs with DOT - [download a pdf](http://www.graphviz.org/Documentation/dotguide.pdf)
 
-2. Node Shapes - [sheps of a node](http://www.graphviz.org/doc/info/shapes.html)
+2. Node Shapes - [shapes of a node](http://www.graphviz.org/doc/info/shapes.html)
 
 ## Tests ##
 
