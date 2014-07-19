@@ -102,8 +102,7 @@ class Price implements \Cosma\SimpleStateMachine\InterfaceData
     /**
     *    getters, setters and other functions
     */
-    .
-    .
+    ...
 }
 ```
 
@@ -131,9 +130,7 @@ class AddVATState extends \Cosma\SimpleStateMachine\AbstractState
     {
         $price = $this->getData();
         $price->setValue($price->getValue() * 1.19);
-        .
-        .
-
+        ...
     }
 
     /**
@@ -151,8 +148,7 @@ class AddVATState extends \Cosma\SimpleStateMachine\AbstractState
         $this->addTransition('NewStateClass', 'ConditionClass');
 
         $this->addTransition('\YourProject\PriceStateMachine\States\AddDiscount');
-        .
-        .
+        ...
     }
 }
 ```
@@ -185,8 +181,7 @@ class SomeWildCondition extends \Cosma\SimpleStateMachine\AbstractCondition
         $data = $this->getData();
         return $this->checkSomething($data);
     }
-    .
-    .
+    ...
 }
 ```
 
@@ -229,9 +224,8 @@ namespace \MyProject\PriceStateMachine\States;
 class MyState extends \Cosma\SimpleStateMachine\AbstractState
 {
     ...
-
     /**
-    * @var array
+    *   An array of DOT attributes to overwrite the default style of a State/Condition
     */
     protected $styleAttributes = array(
         'fillcolor' => '#A8CE9F',
@@ -240,7 +234,6 @@ class MyState extends \Cosma\SimpleStateMachine\AbstractState
         'fontsize' => 12,
         'penwidth' => 1,
     );
-
     ...
 }
 ```
