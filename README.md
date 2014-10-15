@@ -307,3 +307,4 @@ vendor/phpunit/phpunit/phpunit.php --coverage-text  --coverage-html=tests/covera
 --------------
 
 Released under the MIT License, see LICENSE.
+
