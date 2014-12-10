@@ -5,7 +5,8 @@ SimpleStateMachine -  A very simple State Machine
 - States can modify a Data object which will be injected in the initial State.
 - The State Machine graph can be visualised in a UML diagram generated in different formats.
 
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/c63d128b-3148-4149-81a8-ecb03dde355d/mini.png)](https://insight.sensiolabs.com/projects/c63d128b-3148-4149-81a8-ecb03dde355d) [![Build Status](https://drone.io/bitbucket.org/cosma/simple-state-machine/status.png)](https://drone.io/bitbucket.org/cosma/simple-state-machine/latest)
+[![Build Status](https://drone.io/bitbucket.org/cosma/simple-state-machine/status.png)](https://drone.io/bitbucket.org/cosma/simple-state-machine/latest)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/c63d128b-3148-4149-81a8-ecb03dde355d/mini.png)](https://insight.sensiolabs.com/projects/c63d128b-3148-4149-81a8-ecb03dde355d)
 
 ## Table of Contents
 --------------------
