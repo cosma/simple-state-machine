@@ -1,10 +1,11 @@
-SimpleStateMachine -  A very simple State Machine  [![Build Status](https://drone.io/bitbucket.org/cosma/simple-state-machine/status.png)](https://drone.io/bitbucket.org/cosma/simple-state-machine/latest)
+SimpleStateMachine -  A very simple State Machine  
 =================================================
 
 - A Simple State Machine without persistence and timeouts.
 - States can modify a Data object which will be injected in the initial State.
 - The State Machine graph can be visualised in a UML diagram generated in different formats.
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/c63d128b-3148-4149-81a8-ecb03dde355d/mini.png)](https://insight.sensiolabs.com/projects/c63d128b-3148-4149-81a8-ecb03dde355d) [![Build Status](https://drone.io/bitbucket.org/cosma/simple-state-machine/status.png)](https://drone.io/bitbucket.org/cosma/simple-state-machine/latest)
 
 ## Table of Contents
 --------------------
