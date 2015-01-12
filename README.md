@@ -299,7 +299,7 @@ DOT Useful Links:
 -----------
 
 ```bash
-vendor/phpunit/phpunit/phpunit.php --coverage-text  --coverage-html=tests/coverage tests
+vendor/phpunit/phpunit/phpunit --coverage-text  --coverage-html=tests/coverage tests
 ```
 
 
