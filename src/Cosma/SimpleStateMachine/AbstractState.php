@@ -17,7 +17,7 @@ namespace Cosma\SimpleStateMachine;
 abstract class AbstractState
 {
     /**
-     * @var InterfaceData
+     * @var DataInterface
      */
     private $data;
 
@@ -51,9 +51,9 @@ abstract class AbstractState
     );
 
     /**
-     * @param InterfaceData $dataStructure
+     * @param DataInterface $dataStructure
      */
-    public function __construct(InterfaceData $dataStructure = null)
+    public function __construct(DataInterface $dataStructure = null)
     {
         $this->data = $dataStructure;
     }
@@ -211,10 +211,10 @@ abstract class AbstractState
     }
 
     /**
-     * @return InterfaceData
+     * @return DataInterface
      */
     public function getData()
     {
         return $this->data;
     }
-} 
+}

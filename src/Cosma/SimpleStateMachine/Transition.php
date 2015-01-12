@@ -68,4 +68,4 @@ class Transition
     {
         return $this->state;
     }
-} 
+}

@@ -17,7 +17,7 @@ namespace Cosma\SimpleStateMachine;
 abstract class AbstractCondition
 {
     /**
-     * @var InterfaceData
+     * @var DataInterface
      */
     protected $data = null;
 
@@ -39,9 +39,9 @@ abstract class AbstractCondition
     );
 
     /**
-     * @param InterfaceData $dataStructure
+     * @param DataInterface $dataStructure
      */
-    public function __construct(InterfaceData $dataStructure = null)
+    public function __construct(DataInterface $dataStructure = null)
     {
         $this->data = $dataStructure;
     }
@@ -67,4 +67,4 @@ abstract class AbstractCondition
     {
         return $this->styleAttributes;
     }
-} 
+}

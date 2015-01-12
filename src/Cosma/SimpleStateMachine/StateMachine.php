@@ -116,4 +116,4 @@ class StateMachine
     {
         return $this->state;
     }
-} 
+}

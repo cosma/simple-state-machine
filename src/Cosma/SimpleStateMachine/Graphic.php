@@ -106,4 +106,4 @@ class Graphic extends AbstractGraphic
         $output = $exporter->getOutput($this->graph);
         return $output;
     }
-} 
+}

@@ -165,7 +165,7 @@ abstract class AbstractGraphic
     }
 
     public function isDOTInstalled() {
-        $returnValue = @shell_exec("which dot");
+        $returnValue = shell_exec("which dot");
         return (empty($returnValue) ? false : true);
     }
-} 
+}
