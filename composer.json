@@ -8,7 +8,7 @@
         {
             "name": "Cosmin Voicu",
             "email": "cosmin.voicu@gmail.com",
-            "homepage": "http://bitbucket.org/cosma/simple-state-machine"
+            "homepage": "https://github.com/cosma/simple-state-machine"
         }
     ],
     "minimum-stability": "stable",
