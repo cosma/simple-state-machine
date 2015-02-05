@@ -1,14 +1,15 @@
 {
     "name": "cosma/simple-state-machine",
+    "type": "library",
     "description": "Simple State Machine",
     "keywords": ["state machine", "non persistent", "graph generation"],
-    "type": "library",
+    "homepage": "http://github.com/cosma/simple-state-machine",
     "license": "MIT",
     "authors": [
         {
             "name": "Cosmin Voicu",
             "email": "cosmin.voicu@gmail.com",
-            "homepage": "https://github.com/cosma/simple-state-machine"
+            "homepage": "http://github.com/cosma"
         }
     ],
     "minimum-stability": "stable",
