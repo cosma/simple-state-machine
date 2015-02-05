@@ -9,7 +9,7 @@ dependencies:
     - "vendor"
   pre:
     - pwd
-    - mkdir -p graphviz/man/
+    - mkdir -p /home/ubuntu/simple-state-machine/graphviz/man/
     - wget -O graphviz.tar.gz --quiet http://www.graphviz.org/pub/graphviz/stable/SOURCES/graphviz-working.tar.gz
     - tar -zxf graphviz.tar.gz
     - cd graphviz-2.38.0
