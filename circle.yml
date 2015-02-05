@@ -8,6 +8,7 @@ dependencies:
   cache_directories:
     - "vendor"
   pre:
+    - pwd
     - mkdir -p graphviz/man/
     - wget -O graphviz.tar.gz --quiet http://www.graphviz.org/pub/graphviz/stable/SOURCES/graphviz-working.tar.gz
     - tar -zxf graphviz.tar.gz
