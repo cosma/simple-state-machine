@@ -11,10 +11,10 @@ dependencies:
     - mkdir -p graphviz/man/
     - wget -O graphviz.tar.gz --quiet http://www.graphviz.org/pub/graphviz/stable/SOURCES/graphviz-working.tar.gz
     - tar -zxf graphviz.tar.gz
-    - graphviz-2.38.0/configure --silent --exec_prefix=/home/ubuntu/simple-state-machine/graphviz --prefix=/home/ubuntu/simple-state-machine/graphviz --mandir=/home/ubuntu/simple-state-machine/graphviz/man
+    - graphviz-2.38.0/configure --silent --exec_prefix=~/graphviz --prefix=/home/ubuntu/simple-state-machine/graphviz --mandir=~/graphviz/man
     - make --silent --ignore-errors && make --silent --ignore-errors install > /dev/null
     - echo 'export path'
-    - export PATH=$PATH:/home/ubuntu/simple-state-machine/graphviz/bin
+    - export PATH=$PATH:~/graphviz/bin
     - echo 'which dot && version:'
     - which dot
     - dot -V
