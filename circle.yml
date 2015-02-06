@@ -8,11 +8,11 @@ dependencies:
   cache_directories:
     - "vendor"
   pre:
-    - mkdir graphviz
     - wget -O graphviz.tar.gz --quiet http://www.graphviz.org/pub/graphviz/stable/SOURCES/graphviz-working.tar.gz
-    - tar -zxf graphviz.tar.gz -C graphviz
+    - tar -zxf graphviz.tar.gz
+    - mv graphviz* graphviz
     - graphviz/configure --silent
-    - make --silent --ignore-errors && make --silent --ignore-errors install > /dev/null
+    - make --silent --ignore-errors && make --silent --ignore-errors install > /dev/nul'
     - echo 'which dot && version:'
     - which dot
     - dot -V
