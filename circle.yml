@@ -11,7 +11,7 @@ dependencies:
     - wget -O graphviz.tar.gz --quiet http://www.graphviz.org/pub/graphviz/ARCHIVE/graphviz-2.38.0.tar.gz
     - tar -zxf graphviz.tar.gz
     - graphviz-2.38.0/configure --silent
-    - make --silent --ignore-errors && make --silent --ignore-errors install > /dev/nul
+    - make --silent --ignore-errors && make --silent --ignore-errors install > /dev/null
     - echo 'which dot && version:'
     - which dot
     - dot -V
