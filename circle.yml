@@ -2,12 +2,11 @@ machine:
   timezone:
     Europe/Berlin
   php:
-    version: 5.4.9
+    version: 5.5.21
 
 dependencies:
-  cache_directories:
-    - "vendor"
   pre:
+    - echo "zend_extension=xdebug.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
     - wget -O graphviz.tar.gz --quiet http://www.graphviz.org/pub/graphviz/ARCHIVE/graphviz-2.38.0.tar.gz
     - tar -zxf graphviz.tar.gz
     - graphviz-2.38.0/configure --silent
@@ -15,9 +14,10 @@ dependencies:
     - echo 'which dot && version:'
     - which dot
     - dot -V
-    - sudo composer self-update
-    - composer install --prefer-source --no-interaction
+
+  cache_directories:
+    - "vendor"
 
 test:
   override:
-    - vendor/phpunit/phpunit/phpunit  tests
+    - vendor/phpunit/phpunit/phpunit  --coverage-text  tests
