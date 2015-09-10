@@ -11,20 +11,21 @@
  * Time: 02:16
  */
 
-namespace Cosma\SimpleStateMachine\Example\States;
+namespace  Cosma\SimpleStateMachine\Tests\Example\States;
 
 use Cosma\SimpleStateMachine\AbstractState;
-use Cosma\SimpleStateMachine\Example\Price;
+use Cosma\SimpleStateMachine\Tests\Example\Price;
 
-class Add20 extends AbstractState
+class Add5 extends AbstractState
 {
     /**
      * @return string
      */
     public function getLabel()
     {
-        return 'Add 20';
+        return 'Add 5';
     }
+
     /**
      * @return mixed|void
      */
@@ -32,12 +33,13 @@ class Add20 extends AbstractState
     {
         /** @var Price $price */
         $price = $this->getData();
-        $price->setValue($price->getValue() + 20);
+        $price->setValue($price->getValue() + 5);
     }
 
     protected function configureAvailableTransitions()
     {
-        $this->addTransition('Cosma\SimpleStateMachine\Example\States\Add20', 'Cosma\SimpleStateMachine\Example\Conditions\LessThan30');
-        $this->addTransition('Cosma\SimpleStateMachine\Example\States\Subst40');
+        $this->addTransition('Cosma\SimpleStateMachine\Tests\Example\States\Add20', 'Cosma\SimpleStateMachine\Tests\Example\Conditions\LessThan30');
+        $this->addTransition('Cosma\SimpleStateMachine\Tests\Example\States\Add15', 'Cosma\SimpleStateMachine\Tests\Example\Conditions\LessThan50');
+        $this->addTransition('Cosma\SimpleStateMachine\Tests\Example\States\Subst17');
     }
 } 

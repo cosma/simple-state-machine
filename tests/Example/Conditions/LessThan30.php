@@ -8,34 +8,31 @@
  * file that was distributed with this source code.
  *
  * Date: 12/07/14
- * Time: 02:16
+ * Time: 12:04
  */
 
-namespace Cosma\SimpleStateMachine\States;
+namespace Cosma\SimpleStateMachine\Tests\Example\Conditions;
 
-use Cosma\SimpleStateMachine\AbstractState;
-use Cosma\SimpleStateMachine\Example\Price;
+use Cosma\SimpleStateMachine\AbstractCondition;
+use Cosma\SimpleStateMachine\Tests\Example\Price;
 
-class Add1 extends AbstractState
+class LessThan30 extends AbstractCondition
 {
     /**
      * @return string
      */
     public function getLabel()
     {
-        return 'Add 1';
+        return "Less \n Than 30";
     }
 
     /**
-     * @return mixed|void
+     * @return bool
      */
-    protected function process()
+    public function isTrue()
     {
         /** @var Price $price */
-        $price = $this->getData();
-        $price->setValue($price->getValue() +1);
+        $price = $this->data;
+        return $price->getValue() < 30.0;
     }
-
-    protected function configureAvailableTransitions()
-    {}
 } 

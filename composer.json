@@ -21,10 +21,10 @@
         "phpunit/phpunit": "~4.3"
     },
     "autoload": {
-        "psr-0": { "Cosma\\SimpleStateMachine\\": "src/" }
+        "psr-4": { "Cosma\\SimpleStateMachine\\": "src/" }
     },
     "autoload-dev": {
-        "psr-4": { "Cosma\\SimpleStateMachine\\": "tests/Cosma/SimpleStateMachine" }
+        "psr-4": { "Cosma\\SimpleStateMachine\\Tests\\": "tests/" }
     },
     "extra": {
         "branch-alias": {

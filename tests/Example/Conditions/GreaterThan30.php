@@ -11,10 +11,10 @@
  * Time: 12:04
  */
 
-namespace Cosma\SimpleStateMachine\Example\Conditions;
+namespace Cosma\SimpleStateMachine\Tests\Example\Conditions;
 
 use Cosma\SimpleStateMachine\AbstractCondition;
-use Cosma\SimpleStateMachine\Example\Price;
+use Cosma\SimpleStateMachine\Tests\Example\Price;
 
 class GreaterThan30 extends AbstractCondition
 {

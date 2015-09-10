@@ -11,10 +11,10 @@
  * Time: 02:16
  */
 
-namespace Cosma\SimpleStateMachine\Example\States;
+namespace Cosma\SimpleStateMachine\Tests\Example\States;
 
 use Cosma\SimpleStateMachine\AbstractState;
-use Cosma\SimpleStateMachine\Example\Price;
+use Cosma\SimpleStateMachine\Tests\Example\Price;
 
 class Subst2 extends AbstractState
 {
@@ -50,8 +50,8 @@ class Subst2 extends AbstractState
     protected function configureAvailableTransitions()
     {
 
-        $this->addTransition('Cosma\SimpleStateMachine\Example\States\Subst40', 'Cosma\SimpleStateMachine\Example\Conditions\GreaterThan50');
-        $this->addTransition('Cosma\SimpleStateMachine\Example\States\Add5', 'Cosma\SimpleStateMachine\Example\Conditions\GreaterThan20');
-        $this->addTransition('Cosma\SimpleStateMachine\Example\States\Add20');
+        $this->addTransition('Cosma\SimpleStateMachine\Tests\Example\States\Subst40', 'Cosma\SimpleStateMachine\Tests\Example\Conditions\GreaterThan50');
+        $this->addTransition('Cosma\SimpleStateMachine\Tests\Example\States\Add5', 'Cosma\SimpleStateMachine\Tests\Example\Conditions\GreaterThan20');
+        $this->addTransition('Cosma\SimpleStateMachine\Tests\Example\States\Add20');
     }
 } 
