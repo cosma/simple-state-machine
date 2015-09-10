@@ -23,6 +23,9 @@
     "autoload": {
         "psr-0": { "Cosma\\SimpleStateMachine\\": "src/" }
     },
+    "autoload-dev": {
+        "psr-4": { "Cosma\\SimpleStateMachine\\": "tests/Cosma/SimpleStateMachine" }
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
