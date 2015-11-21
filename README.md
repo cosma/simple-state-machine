@@ -13,22 +13,22 @@ SimpleStateMachine -  A very simple State Machine
 ## Table of Contents
 --------------------
 
-- [Installation](#markdown-header-installation)
+- [Installation](#installation)
 - [Usage](#usage)
-- [Reference](#markdown-header-reference)
-    - [Defining Data Object](#markdown-header-defining-data-object)
-    - [Defining States](#markdown-header-defining-states)
-    - [Define Conditions](#markdown-header-define-conditions)
-    - [Graph Diagram](#markdown-header-graph-diagram)
-    - [Export Formats](#markdown-header-export-formats)
-    - [DOT Language](#markdown-header-dot-language)
-- [Tests](#markdown-header-tests)
-- [License](#markdown-header-license)
+- [Reference](#reference)
+    - [Defining Data Object](#defining-data-object)
+    - [Defining States](#defining-states)
+    - [Define Conditions](#define-conditions)
+    - [Graph Diagram](#graph-diagram)
+    - [Export Formats](#export-formats)
+    - [DOT Language](#dot-language)
+- [Tests](#tests)
+- [License](#license)
 
 
 
 
-## Installation ##
+## Installation
 ------------------
 
 Simple State Machine is installable via [Composer](https://getcomposer.org/)
@@ -99,7 +99,7 @@ echo $diagramSVG;
 
 
 
-## Reference ##
+## Reference
 ---------------
 
 ### Defining Data Object ###
@@ -134,7 +134,7 @@ class Price implements \Cosma\SimpleStateMachine\InterfaceData
 
 
 
-### Defining States ###
+### Defining States
 
 All states must extend the class \Cosma\SimpleStateMachine\AbstractState
 
@@ -182,7 +182,7 @@ class AddVATState extends \Cosma\SimpleStateMachine\AbstractState
 ```
 
 
-### Defining Conditions ###
+### Defining Conditions
 
 A Transition between states is possible directly when there is no condition or,
 if there is a condition, only when that condition is true.
@@ -216,7 +216,7 @@ class SomeWildCondition extends \Cosma\SimpleStateMachine\AbstractCondition
 
 
 
-### Graph Diagram ###
+### Graph Diagram
 
 You can easily visualise the State Machine Diagram
 
@@ -235,13 +235,12 @@ echo $diagramSVG;
 
 
 
-### Export Formats ###
+### Export Formats
 
 
 The output is delivered in various formats.
 
 The most used export formats are:
-https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/PNG.png
 - [PNG](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/PNG.png)
 - [PDF](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/PDF.pdf)
 - [SVG](https://github.com/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/SVG.xml)
@@ -258,7 +257,7 @@ tga, tif, tiff, tk, vml, vmlz, x11, xdot, xdot1.2, xdot1.4, xlib
 
 
 
-### DOT Language ###
+### DOT Language
 
 Stands for graph description language and you can read more [here](http://en.wikipedia.org/wiki/DOT_(graph_description_language))
 
@@ -297,7 +296,7 @@ DOT Useful Links:
 
 
 
-## Tests ##
+## Tests
 -----------
 
 ```bash
