@@ -5,7 +5,7 @@ SimpleStateMachine -  A very simple State Machine
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/c63d128b-3148-4149-81a8-ecb03dde355d/mini.png)](https://insight.sensiolabs.com/projects/c63d128b-3148-4149-81a8-ecb03dde355d)
 
 
-- A Simple State Machine without persistence and timeouts.
+- A Simple State Machine without timeouts.
 - States can modify a Data object which will be injected in the initial State.
 - The State Machine graph can be visualised in a UML diagram generated in different formats.
 
@@ -14,7 +14,7 @@ SimpleStateMachine -  A very simple State Machine
 --------------------
 
 - [Installation](#markdown-header-installation)
-- [Usage](#markdown-header-usage)
+- [Usage](#usage)
 - [Reference](#markdown-header-reference)
     - [Defining Data Object](#markdown-header-defining-data-object)
     - [Defining States](#markdown-header-defining-states)
@@ -45,7 +45,7 @@ as [cosma/simple-state-machine](https://packagist.org/packages/cosma/simple-stat
 
 
 
-## Usage ##
+## Usage
 -----------
 
 Let's follow the example of a simple price calculator state machine.
@@ -241,16 +241,16 @@ echo $diagramSVG;
 The output is delivered in various formats.
 
 The most used export formats are:
-
-- [PNG](https://github.com/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/PNG.png)
-- [PDF](https://github.com/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/PDF.pdf)
+https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/PNG.png
+- [PNG](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/PNG.png)
+- [PDF](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/PDF.pdf)
 - [SVG](https://github.com/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/SVG.xml)
-- [DOT](https://github.com/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/DOT.dot)
-- [EPS](https://github.com/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/EPS.eps)
-- [TIFF](https://github.com/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/TIFF.tiff)
-- [JPG](https://github.com/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/JPG.jpg) (low quality)
-- [GIF](https://github.com/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/GIF.gif) (low quality)
-- [BMP](https://github.com/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/BMP.bmp) (low quality)
+- [DOT](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/DOT.dot)
+- [EPS](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/EPS.eps)
+- [TIFF](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/TIFF.tiff)
+- [JPG](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/JPG.jpg) (low quality)
+- [GIF](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/GIF.gif) (low quality)
+- [BMP](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/BMP.bmp) (low quality)
 
 All supported formats are the DOT output formats: bmp, canon, cgimage, cmap, cmapx, cmapx_np, dot, eps, exr, fig, gif, gv, icns,
 ico, imap, imap_np, ismap, jp2, jpe, jpeg, jpg, pct, pdf, pic, pict, plain, plain-ext, png, pov, ps, ps2, psd, sgi, svg, svgz,
