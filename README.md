@@ -1,5 +1,4 @@
-SimpleStateMachine -  A very simple State Machine  
-=================================================
+# SimpleStateMachine -  A very simple State Machine 
 
 [![Circle CI](https://circleci.com/gh/cosma/simple-state-machine.svg?style=svg)](https://circleci.com/gh/cosma/simple-state-machine)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/c63d128b-3148-4149-81a8-ecb03dde355d/mini.png)](https://insight.sensiolabs.com/projects/c63d128b-3148-4149-81a8-ecb03dde355d)
@@ -11,7 +10,6 @@ SimpleStateMachine -  A very simple State Machine
 
 
 ## Table of Contents
---------------------
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -29,7 +27,6 @@ SimpleStateMachine -  A very simple State Machine
 
 
 ## Installation
-------------------
 
 Simple State Machine is installable via [Composer](https://getcomposer.org/)
 as [cosma/simple-state-machine](https://packagist.org/packages/cosma/simple-state-machine).
