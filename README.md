@@ -43,7 +43,6 @@ as [cosma/simple-state-machine](https://packagist.org/packages/cosma/simple-stat
 
 
 ## Usage
------------
 
 Let's follow the example of a simple price calculator state machine.
 
@@ -97,7 +96,6 @@ echo $diagramSVG;
 
 
 ## Reference
----------------
 
 ### Defining Data Object ###
 
@@ -294,7 +292,6 @@ DOT Useful Links:
 
 
 ## Tests
------------
 
 ```bash
 vendor/phpunit/phpunit/phpunit --coverage-text  --coverage-html=tests/coverage tests
@@ -304,6 +301,5 @@ vendor/phpunit/phpunit/phpunit --coverage-text  --coverage-html=tests/coverage t
 
 
 ## License ##
---------------
 
 Released under the MIT License, see LICENSE.
