@@ -238,7 +238,7 @@ The output is delivered in various formats.
 The most used export formats are:
 - [PNG](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/PNG.png)
 - [PDF](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/PDF.pdf)
-- [SVG](https://github.com/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/SVG.xml)
+- [SVG](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/SVG.xml)
 - [DOT](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/DOT.dot)
 - [EPS](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/EPS.eps)
 - [TIFF](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/TIFF.tiff)
