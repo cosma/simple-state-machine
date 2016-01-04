@@ -1,35 +1,32 @@
-SimpleStateMachine -  A very simple State Machine  
-=================================================
+# SimpleStateMachine -  A very simple State Machine 
 
 [![Circle CI](https://circleci.com/gh/cosma/simple-state-machine.svg?style=svg)](https://circleci.com/gh/cosma/simple-state-machine)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/c63d128b-3148-4149-81a8-ecb03dde355d/mini.png)](https://insight.sensiolabs.com/projects/c63d128b-3148-4149-81a8-ecb03dde355d)
 
 
-- A Simple State Machine without persistence and timeouts.
+- A Simple State Machine without timeouts.
 - States can modify a Data object which will be injected in the initial State.
 - The State Machine graph can be visualised in a UML diagram generated in different formats.
 
 
 ## Table of Contents
---------------------
 
-- [Installation](#markdown-header-installation)
-- [Usage](#markdown-header-usage)
-- [Reference](#markdown-header-reference)
-    - [Defining Data Object](#markdown-header-defining-data-object)
-    - [Defining States](#markdown-header-defining-states)
-    - [Define Conditions](#markdown-header-define-conditions)
-    - [Graph Diagram](#markdown-header-graph-diagram)
-    - [Export Formats](#markdown-header-export-formats)
-    - [DOT Language](#markdown-header-dot-language)
-- [Tests](#markdown-header-tests)
-- [License](#markdown-header-license)
-
+- [Installation](#installation)
+- [Usage](#usage)
+- [Reference](#reference)
+    - [Defining Data Object](#defining-data-object)
+    - [Defining States](#defining-states)
+    - [Define Conditions](#define-conditions)
+    - [Graph Diagram](#graph-diagram)
+    - [Export Formats](#export-formats)
+    - [DOT Language](#dot-language)
+- [Tests](#tests)
+- [License](#license)
 
 
 
-## Installation ##
-------------------
+
+## Installation
 
 Simple State Machine is installable via [Composer](https://getcomposer.org/)
 as [cosma/simple-state-machine](https://packagist.org/packages/cosma/simple-state-machine).
@@ -45,8 +42,7 @@ as [cosma/simple-state-machine](https://packagist.org/packages/cosma/simple-stat
 
 
 
-## Usage ##
------------
+## Usage
 
 Let's follow the example of a simple price calculator state machine.
 
@@ -99,8 +95,7 @@ echo $diagramSVG;
 
 
 
-## Reference ##
----------------
+## Reference
 
 ### Defining Data Object ###
 
@@ -134,7 +129,7 @@ class Price implements \Cosma\SimpleStateMachine\InterfaceData
 
 
 
-### Defining States ###
+### Defining States
 
 All states must extend the class \Cosma\SimpleStateMachine\AbstractState
 
@@ -182,7 +177,7 @@ class AddVATState extends \Cosma\SimpleStateMachine\AbstractState
 ```
 
 
-### Defining Conditions ###
+### Defining Conditions
 
 A Transition between states is possible directly when there is no condition or,
 if there is a condition, only when that condition is true.
@@ -216,7 +211,7 @@ class SomeWildCondition extends \Cosma\SimpleStateMachine\AbstractCondition
 
 
 
-### Graph Diagram ###
+### Graph Diagram
 
 You can easily visualise the State Machine Diagram
 
@@ -235,22 +230,21 @@ echo $diagramSVG;
 
 
 
-### Export Formats ###
+### Export Formats
 
 
 The output is delivered in various formats.
 
 The most used export formats are:
-
-- [PNG](https://github.com/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/PNG.png)
-- [PDF](https://github.com/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/PDF.pdf)
-- [SVG](https://github.com/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/SVG.xml)
-- [DOT](https://github.com/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/DOT.dot)
-- [EPS](https://github.com/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/EPS.eps)
-- [TIFF](https://github.com/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/TIFF.tiff)
-- [JPG](https://github.com/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/JPG.jpg) (low quality)
-- [GIF](https://github.com/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/GIF.gif) (low quality)
-- [BMP](https://github.com/cosma/simple-state-machine/raw/master/tests/Cosma/SimpleStateMachine/Example/Draw/Formats/BMP.bmp) (low quality)
+- [PNG](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/PNG.png)
+- [PDF](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/PDF.pdf)
+- [SVG](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/SVG.xml)
+- [DOT](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/DOT.dot)
+- [EPS](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/EPS.eps)
+- [TIFF](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/TIFF.tiff)
+- [JPG](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/JPG.jpg) (low quality)
+- [GIF](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/GIF.gif) (low quality)
+- [BMP](https://raw.githubusercontent.com/cosma/simple-state-machine/master/tests/Example/Draw/Formats/BMP.bmp) (low quality)
 
 All supported formats are the DOT output formats: bmp, canon, cgimage, cmap, cmapx, cmapx_np, dot, eps, exr, fig, gif, gv, icns,
 ico, imap, imap_np, ismap, jp2, jpe, jpeg, jpg, pct, pdf, pic, pict, plain, plain-ext, png, pov, ps, ps2, psd, sgi, svg, svgz,
@@ -258,7 +252,7 @@ tga, tif, tiff, tk, vml, vmlz, x11, xdot, xdot1.2, xdot1.4, xlib
 
 
 
-### DOT Language ###
+### DOT Language
 
 Stands for graph description language and you can read more [here](http://en.wikipedia.org/wiki/DOT_(graph_description_language))
 
@@ -297,8 +291,7 @@ DOT Useful Links:
 
 
 
-## Tests ##
------------
+## Tests
 
 ```bash
 vendor/phpunit/phpunit/phpunit --coverage-text  --coverage-html=tests/coverage tests
@@ -308,6 +301,5 @@ vendor/phpunit/phpunit/phpunit --coverage-text  --coverage-html=tests/coverage t
 
 
 ## License ##
---------------
 
 Released under the MIT License, see LICENSE.
